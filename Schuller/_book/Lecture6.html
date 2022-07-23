@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Schuller - 4&nbsp; Fields</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./Lecture5.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Fields</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Schuller</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Overview</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Multilinear Algebra</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Differentiable Manifolds</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tangent Spaces</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture6.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Fields</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#bundles" id="toc-bundles" class="nav-link active" data-scroll-target="#bundles"> <span class="header-section-number">4.1</span> Bundles</a>
+  <ul class="collapse">
+  <li><a href="#example-the-cylinder" id="toc-example-the-cylinder" class="nav-link" data-scroll-target="#example-the-cylinder"> <span class="header-section-number">4.1.1</span> Example: The cylinder</a></li>
+  </ul></li>
+  <li><a href="#tangent-bundle-of-a-smooth-manifold" id="toc-tangent-bundle-of-a-smooth-manifold" class="nav-link" data-scroll-target="#tangent-bundle-of-a-smooth-manifold"> <span class="header-section-number">4.2</span> Tangent Bundle of a Smooth Manifold</a></li>
+  <li><a href="#vector-fields" id="toc-vector-fields" class="nav-link" data-scroll-target="#vector-fields"> <span class="header-section-number">4.3</span> Vector Fields</a></li>
+  <li><a href="#the-cinftymathcalm-module-gammatmathcalm" id="toc-the-cinftymathcalm-module-gammatmathcalm" class="nav-link" data-scroll-target="#the-cinftymathcalm-module-gammatmathcalm"> <span class="header-section-number">4.4</span> The <span class="math inline">C^{\infty}(\mathcal{M})</span>-module <span class="math inline">\Gamma(T\mathcal{M})</span></a></li>
+  <li><a href="#tensor-fields" id="toc-tensor-fields" class="nav-link" data-scroll-target="#tensor-fields"> <span class="header-section-number">4.5</span> Tensor Fields</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"> <span class="header-section-number">4.5.1</span> Example</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Fields</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>So far we’ve focused on the tangent space (and its dual) at a single point <span class="math inline">p\in\mathcal{M}</span>. As physicists, we are interested in <em>vector fields</em>, i.e.&nbsp;a vector at every point in space. The rigorous way to do this is the <strong>Theory of Bundles</strong>. So, we develope it…</p>
+<section id="bundles" class="level2 page-columns page-full" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="bundles"><span class="header-section-number">4.1</span> Bundles</h2>
+<p><strong>Definition</strong>: A bundle is a triple <span class="math inline">E\xrightarrow{\pi}M</span> where</p>
+<ul>
+<li><span class="math inline">E</span> is a smooth manifold called the <em>total space</em></li>
+<li><span class="math inline">\pi:E\to M</span> is the smooth, surjective <em>projection map</em></li>
+<li><span class="math inline">M</span> is a smooth manifold called the <em>base space</em></li>
+</ul>
+<p>Any 3 pieces of data like this are called a bundle.</p>
+<section id="example-the-cylinder" class="level3 page-columns page-full" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="example-the-cylinder"><span class="header-section-number">4.1.1</span> Example: The cylinder</h3>
+<p>We can think of <span class="math inline">E</span> as a cylinder, <span class="math inline">M</span> as a circle, and <span class="math inline">\pi</span> chosen to to project the point on the cylinder vertically down to <span class="math inline">z=0</span> on the circle. See $fig-cylinderbundle</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-cylinderbundle" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./figures/lecture6/cylinder_bundle.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 4.1: The Cylinder interpreted as a bundle</figcaption><p></p>
+</figure>
+</div>
+</div></div><p><strong>Definition</strong>: Given a bundle <span class="math inline">(E,\pi, M)</span>, we define the <em>fibre over <span class="math inline">p</span></em> as <span class="math inline">\text{preim}_\pi(\{p \})</span></p>
+<p><strong>Definition</strong>: A section <span class="math inline">\sigma</span> is a map <span class="math inline">\sigma:M\to E</span> (i.e.&nbsp;this goes the other way!) with the requirement that <span class="math display">\begin{equation}
+    \pi \circ \sigma = \text{Id}_M
+\end{equation}</span></p>
+<p>As physicists now, we may consider our manifold <span class="math inline">\mathcal{M}</span> where the fibres over each <span class="math inline">p\in\mathcal{M}</span> are just <span class="math inline">T_p\mathcal{M}</span>. <em>What would the sections be?</em> A section here would be a map that gives a vector for every point <span class="math inline">p\in\mathcal{M}</span>. <strong>This is exactly what we think of when we think of vector fields</strong>.</p>
+<div class="page-columns page-full"><p><strong>Summary:</strong> The sections are our physics notion of <em>fields</em>. The type of field is determined by the type of fibre. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1" role="doc-endnote">Note: here we have extended the action of a vector at a point on a function to the action of a vector field on a manifold in the obvious way, i.e.
+<span class="math display">\begin{aligned}
+&amp;\chi f: \mathcal{M} \to \mathbb{R} \\
+&amp;p \mapsto \chi(p)f
+\end{aligned}</span>
+</li></div></div>
+<p>The natual next question is <em>what is the total space</em> we are thinking of? Can we collect each <span class="math inline">T_p\mathcal{M}</span> into a smooth manifold?</p>
+</section>
+</section>
+<section id="tangent-bundle-of-a-smooth-manifold" class="level2 page-columns page-full" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="tangent-bundle-of-a-smooth-manifold"><span class="header-section-number">4.2</span> Tangent Bundle of a Smooth Manifold</h2>
+<p>Let <span class="math inline">(\mathcal{M}, \mathcal{O}, \mathscr{A})</span> be a smooth manifold. We define the <strong>Tangent Bundle</strong></p>
+<ol type="1">
+<li><p>as a set, it is the <em>disjoint</em> union of tangent spaces: <span class="math display">\begin{equation}
+T\mathcal{M} := \bigcup\limits_{p\in \mathcal{M}}^\bullet T_p\mathcal{M}
+\end{equation}</span></p></li>
+<li><p>The surjective projection map is <span class="math inline">\pi:T\mathcal{M} \to \mathcal{M}</span> with <span class="math display">\begin{equation}
+X \mapsto p
+\end{equation}</span></p></li>
+</ol>
+<p>At this point we need to turn <span class="math inline">T\mathcal{M}</span> into a smooth manifold. First we make <span class="math inline">T\mathcal{M}</span> into a topological manifold by equipping it with a topology. Since we already have a topology on <span class="math inline">\mathcal{M}</span> what we do is to construct a topology on <span class="math inline">T\mathcal{M}</span> that is the coarsest possible topology such that <span class="math inline">\pi</span> becomes continuous, i.e.&nbsp;the <em>initial topology</em> with respect to <span class="math inline">\pi</span>: <span class="math display">\begin{equation}
+    \mathcal{O}_{T\mathcal{M}} := \left\{ \text{preim}_\pi(\mathcal{U}) \Big\vert \mathcal{U}\in\mathcal{O}_\mathcal{M}\right\}
+\end{equation}</span> This makes sense as we definitly want <span class="math inline">\pi</span> to be continuous and therefor it must map open sets to open sets.</p>
+<div class="page-columns page-full"><p>Now we construct a <span class="math inline">C^{\infty}</span> atlas on <span class="math inline">T\mathcal{M}</span> from <span class="math inline">\mathscr{A}</span> we already have on <span class="math inline">\mathcal{M}</span>. <span class="math display">\begin{equation}
+    \mathscr{A}_{T\mathcal{M}} := \left\{ (T\mathcal{U}, \xi_x) \Big\vert (\mathcal{U}, x)\in \mathscr{A} \right\}
+\end{equation}</span> where<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <span class="math display">\begin{align}
+    \xi_x&amp;: T\mathcal{U} \to \mathbb{R}^{2\text{ dim}\mathcal{M}} \\
+    X &amp;\mapsto \left( (x^1\circ \pi)(X), ... , (x^d\circ\pi)(X), (dx^1)_{\pi(x)}(X), ..., (dx^d)_{\pi(x)}(X) \right)
+\end{align}</span></p><div class="no-row-height column-margin column-container"><li id="fn2" role="doc-endnote"><p><sup>2</sup>&nbsp;We do not mean s-multiplication here. We can multiply by any <span class="math inline">g\in C^{\infty}(\mathcal{M})</span> since we can define the multiplication pointwise using multiplication in <span class="math inline">\mathbb{R}</span>.</p></li></div></div>
+<p>Further, we may consider the inverse of the chartmap <span class="math display">\begin{align}
+    \xi_x^{-1}&amp;: \xi_x(T\mathcal{U}) \to T\mathcal{U} \\
+    (\alpha^1,...\alpha^d, \beta^1, ... \beta^d) &amp;:= \beta^i\left(\dfrac{\partial}{\partial x^i}\right)_{x^{-1}(\alpha^1, ..., \alpha^d)}
+\end{align}</span></p>
+<p>Now we must ask: <em>are these chart maps smooth?</em></p>
+<p><span class="math display">\begin{align}
+    &amp;(\xi_y\circ\xi_x^{-1})(\alpha^1,...\alpha^d,\beta^1,...,\beta^d) = \xi_y\left(\beta^i\left(\dfrac{\partial}{\partial x^i}\right)_{x^{-1}(\alpha^1, ..., \alpha^d)}\right)\\
+&amp;\qquad = \Big(..., (y^i\circ\pi)\left(\beta^n\left(\dfrac{\partial}{\partial x^n}\right)_{x^{-1}(\alpha^1, ..., \alpha^d)}\right),..., \\
+&amp;\qquad\qquad ...,(dy^i)_{x^{-1}(\alpha^1,...\alpha^d)}\left(\beta^n\left(\dfrac{\partial}{\partial x^n}\right)_{x^{-1}(\alpha^1, ... , \alpha^d)}\right) ,... \Big) \\
+&amp;\qquad = \left(..., (y^i\circ x^{-1})(\alpha^1,...,\alpha^d),..., ...,\beta^n dy^i\left(\frac{\partial}{\partial x^n}\right) , ... \right) \\
+&amp;\qquad = \left(..., (y^i\circ x^{-1})(\alpha^1,...,\alpha^d),..., ...,\beta^n \left(\frac{\partial y^i}{\partial x^n}\right) , ... \right) \\
+\end{align}</span> Is this a smooth map? Yes, because the chart transition map <span class="math inline">y^i\circ x^{-1}</span> are smooth and so are the change of coordinate functions <span class="math inline">\frac{\partial y^i}{\partial x^j}</span>.</p>
+<p>Thus, we can conclude that <span class="math inline">(T\mathcal{M}, \pi, \mathcal{M})</span> really is a bundle which we call the <strong>Tangent bundle</strong></p>
+</section>
+<section id="vector-fields" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="vector-fields"><span class="header-section-number">4.3</span> Vector Fields</h2>
+<p><strong>Definition</strong>: A smooth vector field <span class="math inline">\chi</span> is a smooth section of the tangent bundle <span class="math inline">(T\mathcal{M}, \pi, \mathcal{M})</span>, i.e.&nbsp; <span class="math display">\begin{align}
+    &amp;\chi:\mathcal{M}\to T\mathcal{M} \\
+    &amp;\pi\circ\chi = \text{Id}_\mathcal{M}
+\end{align}</span></p>
+</section>
+<section id="the-cinftymathcalm-module-gammatmathcalm" class="level2 page-columns page-full" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="the-cinftymathcalm-module-gammatmathcalm"><span class="header-section-number">4.4</span> The <span class="math inline">C^{\infty}(\mathcal{M})</span>-module <span class="math inline">\Gamma(T\mathcal{M})</span></h2>
+<div class="page-columns page-full"><p><strong>Definition</strong>: We define <span class="math inline">\Gamma(T\mathcal{M})</span> as <span class="math display">\begin{equation}
+    \Gamma(T\mathcal{M}) = \left\{ \chi:T\mathcal{M}\to\mathcal{M}\Big\vert \text{ smooth section } \right\}
+\end{equation}</span> which we equip with addition by<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <span class="math display">\begin{equation}
+    (\chi + \tilde\chi)(f) := \chi f + \tilde\chi f
+\end{equation}</span></p><div class="no-row-height column-margin column-container"><li id="fn3" role="doc-endnote">Note: here we have extended the action of a vector at a point on a function to the action of a vector field on a manifold in the obvious way, i.e.
+<span class="math display">\begin{aligned}
+&amp;\chi f: \mathcal{M} \to \mathbb{R} \\
+&amp;p \mapsto \chi(p)f
+\end{aligned}</span>
+</li></div></div>
+as well as multiplication<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> via
+<div class="no-row-height column-margin column-container"><li id="fn4" role="doc-endnote"><p><sup>4</sup>&nbsp;We do not mean s-multiplication here. We can multiply by any <span class="math inline">g\in C^{\infty}(\mathcal{M})</span> since we can define the multiplication pointwise using multiplication in <span class="math inline">\mathbb{R}</span>.</p></li></div><span class="math display">\begin{aligned}
+    (g\cdot \chi)(f) := g\cdot \chi(f)
+\end{aligned}</span>
+<p>The special case of a vector field over the ring is called a <strong>module</strong>.</p>
+<p><strong>Upshot</strong>: The set of all smooth vector fields can be made into a <span class="math inline">C^{\infty}(\mathcal{M})</span>-module.</p>
+<p>We can now use <span class="math inline">\frac{\partial}{\partial x^i}:\mathcal{U}\to T\mathcal{U}</span> with no supscript for the point to denote the coordinate induced vector field.</p>
+</section>
+<section id="tensor-fields" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="tensor-fields"><span class="header-section-number">4.5</span> Tensor Fields</h2>
+<p>In much the same way as we constructed <span class="math inline">\Gamma(T\mathcal{M})</span>, we can define the cotangent fields via <span class="math inline">\Gamma(T^*\mathcal{M})</span> using the cotangent bundle <span class="math inline">(T^*\mathcal{M}, \pi, \mathcal{M})</span>. With these two objects in hand, we proceed to tensor fields.</p>
+<p><strong>Definition</strong>: An <span class="math inline">(r,s)</span>-tensor field <span class="math inline">T</span> is a <span class="math inline">C^{\infty}(\mathcal{M})</span>-multi-linear map <span class="math display">\begin{equation}
+    T: \Gamma(T^*\mathcal{M})\times \underset{r}{...}\times  \Gamma(T^*\mathcal{M})\times  \Gamma(T^\mathcal{M})\underset{s}{...}\times \Gamma(T^\mathcal{M}) \xrightarrow{\sim} C^{\infty}(\mathcal{M})
+\end{equation}</span></p>
+<section id="example" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="example"><span class="header-section-number">4.5.1</span> Example</h3>
+<p>For any <span class="math inline">f\in C^{\infty}(\mathcal{M})</span>, we define <span class="math display">\begin{align}
+    &amp;df : \gamma(T\mathcal{M}) \xrightarrow{\sim} C^{\infty}(\mathcal{M}) \\
+    &amp;\chi \mapsto df(\chi)
+\end{align}</span> where <span class="math inline">(\chi f)(p) = \chi(p)f</span>.</p>
+
+
+</section>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Lecture5.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tangent Spaces</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

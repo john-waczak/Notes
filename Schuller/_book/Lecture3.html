@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Schuller - 1&nbsp; Multilinear Algebra</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Lecture4.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Multilinear Algebra</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Schuller</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Overview</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Multilinear Algebra</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Differentiable Manifolds</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#vector-spaces" id="toc-vector-spaces" class="nav-link active" data-scroll-target="#vector-spaces"> <span class="header-section-number">1.1</span> Vector Spaces</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"> <span class="header-section-number">1.1.1</span> Example</a></li>
+  </ul></li>
+  <li><a href="#linear-maps" id="toc-linear-maps" class="nav-link" data-scroll-target="#linear-maps"> <span class="header-section-number">1.2</span> Linear Maps</a>
+  <ul class="collapse">
+  <li><a href="#example-differentiation" id="toc-example-differentiation" class="nav-link" data-scroll-target="#example-differentiation"> <span class="header-section-number">1.2.1</span> Example (Differentiation)</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"> <span class="header-section-number">1.2.2</span> Example</a></li>
+  </ul></li>
+  <li><a href="#vector-space-of-homomorphisms" id="toc-vector-space-of-homomorphisms" class="nav-link" data-scroll-target="#vector-space-of-homomorphisms"> <span class="header-section-number">1.3</span> Vector Space of Homomorphisms</a>
+  <ul class="collapse">
+  <li><a href="#example-texthompp" id="toc-example-texthompp" class="nav-link" data-scroll-target="#example-texthompp"> <span class="header-section-number">1.3.1</span> Example <span class="math inline">\text{Hom}(P,P)</span></a></li>
+  </ul></li>
+  <li><a href="#dual-vector-space" id="toc-dual-vector-space" class="nav-link" data-scroll-target="#dual-vector-space"> <span class="header-section-number">1.4</span> Dual Vector Space</a>
+  <ul class="collapse">
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2"> <span class="header-section-number">1.4.1</span> Example</a></li>
+  </ul></li>
+  <li><a href="#tensors" id="toc-tensors" class="nav-link" data-scroll-target="#tensors"> <span class="header-section-number">1.5</span> Tensors</a>
+  <ul class="collapse">
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3"> <span class="header-section-number">1.5.1</span> Example</a></li>
+  <li><a href="#excursion" id="toc-excursion" class="nav-link" data-scroll-target="#excursion"> <span class="header-section-number">1.5.2</span> Excursion</a></li>
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4"> <span class="header-section-number">1.5.3</span> Example</a></li>
+  </ul></li>
+  <li><a href="#vectors-and-covectors-as-tensors" id="toc-vectors-and-covectors-as-tensors" class="nav-link" data-scroll-target="#vectors-and-covectors-as-tensors"> <span class="header-section-number">1.6</span> Vectors and Covectors as Tensors</a></li>
+  <li><a href="#bases" id="toc-bases" class="nav-link" data-scroll-target="#bases"> <span class="header-section-number">1.7</span> Bases</a></li>
+  <li><a href="#basis-for-the-dual-space" id="toc-basis-for-the-dual-space" class="nav-link" data-scroll-target="#basis-for-the-dual-space"> <span class="header-section-number">1.8</span> Basis for the Dual Space</a>
+  <ul class="collapse">
+  <li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5"> <span class="header-section-number">1.8.1</span> Example</a></li>
+  </ul></li>
+  <li><a href="#components-of-tensors" id="toc-components-of-tensors" class="nav-link" data-scroll-target="#components-of-tensors"> <span class="header-section-number">1.9</span> Components of Tensors</a>
+  <ul class="collapse">
+  <li><a href="#example-6" id="toc-example-6" class="nav-link" data-scroll-target="#example-6"> <span class="header-section-number">1.9.1</span> Example</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Multilinear Algebra</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>Traditionally, this subsect is known as <em>Tensor Theory</em>.</p>
+<p>Multilinear algebra <em>is the same field</em> as the more familiar Linear Algebra- the only difference is we extend our mappings of consideration from linear maps to so called <strong>multilinear maps</strong>. The object of study of multilinear algebra is just <strong>vector spaces</strong>.</p>
+<div class="page-columns page-full"><p>A word of warning, though: we will <em>not</em> equip space(time) with a vector space structure. If spacetime does not have anything to do with vector spaces, why do we care? Because the smooth manifolds we will use to model spacetime come equipped with natural linear spaces called the <strong>Tangent Space</strong>, <span class="math inline">T_pM</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. It is here that our development of the multilinear algebra will really come into focus.</p><div class="no-row-height column-margin column-container"><li id="fn1" role="doc-endnote"><p><sup>1</sup>&nbsp;Smooth manifolds will be defined in Lecture 4. The concept of the Tangent Space <span class="math inline">T_pM</span> will be explored in Lecture 5.</p></li></div></div>
+<p>It is beneficial to first study Vector Spaces in full (abstract) detail before moving on for two reasons:</p>
+<ol type="1">
+<li>To construct <span class="math inline">T_pM</span>, one needs an intermediate vector space called <span class="math inline">C^{\infty}(M**</span>.</li>
+<li>Tensor techniques are most easily understood in the abstract context.</li>
+</ol>
+<section id="vector-spaces" class="level2 page-columns page-full" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="vector-spaces"><span class="header-section-number">1.1</span> Vector Spaces</h2>
+<p><strong>Definition:</strong> An <span class="math inline">\mathbb{R}</span> Vector Space <span class="math inline">(V, +, *)</span> is</p>
+<ol type="1">
+<li>A set <span class="math inline">V</span></li>
+<li><span class="math inline">+:V\times V\to V</span> (vector addition)</li>
+<li><span class="math inline">*:\mathbb{R}\times V \to V</span> (scalar multiplication)</li>
+</ol>
+<p>which satisfies the following rules:</p>
+<ul>
+<li><ol start="3" type="A">
+<li><span class="math inline">v + w = w + v</span> for <span class="math inline">v,w \in V</span></li>
+</ol></li>
+<li><ol type="A">
+<li><span class="math inline">(u + v) + w = u + (v + w)</span> for <span class="math inline">u,v,w \in V</span></li>
+</ol></li>
+<li><ol start="14" type="A">
+<li><span class="math inline">\exists 0\in V</span> such that <span class="math inline">\forall v \in V</span>: <span class="math inline">v + 0 = v</span></li>
+</ol></li>
+<li><ol type="I">
+<li><span class="math inline">\forall v \in V</span>, <span class="math inline">\exists (-v) \in V</span>: <span class="math inline">v + (-v) = 0</span></li>
+</ol></li>
+<li><ol type="A">
+<li><span class="math inline">\lambda \cdot (\nu \cdot v) = (\lambda \cdot \nu) \cdot v</span> <span class="math inline">\forall \lambda, \nu \in \mathbb{R}</span> and <span class="math inline">\forall v \in V</span>.</li>
+</ol></li>
+<li><ol start="4" type="A">
+<li><span class="math inline">(\lambda + \nu)v = \lambda v + \nu v</span></li>
+</ol></li>
+<li><ol start="4" type="A">
+<li><span class="math inline">\lambda \nu + \lambda w = \lambda(v+w)</span></li>
+</ol></li>
+<li><ol start="21" type="A">
+<li><span class="math inline">1\cdot v = v</span></li>
+</ol></li>
+</ul>
+<p>Summary: Any structure of this type that satisfies these axioms is a vector space.</p>
+<div class="page-columns page-full"><p>Terminology: An element of a vector space is often referred to (informally) as a <em>vector</em>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn2" role="doc-endnote"><p><sup>2</sup>&nbsp;You must not ask the question: <em>What is a vector?</em>. You couldn’t tell that an object is a vector just by looking at it. You need to check how it behaves with other <em>similar</em> objects.</p></li></div></div>
+<section id="example" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="example"><span class="header-section-number">1.1.1</span> Example</h3>
+<p>Consider the set of polynomials <span class="math inline">P_n := \{p=\sum_{i=0}^{n}p_ix^i\}</span> with <span class="math inline">p_i\in \mathbb{R}</span> and <span class="math inline">p:(-1,1)\to\mathbb{R}</span>. At this stage, we may ask the <em>simple</em> question: is <span class="math inline">\square:x\mapsto x^2</span> a vector? <strong>NO!</strong> <span class="math inline">\square</span> is an element of the set <span class="math inline">P</span>. We have not defined a vector space for which addition and s-multiplication make sense.</p>
+<p>Now, we define <span class="math inline">+:P\times P \to P</span> whereby <span class="math inline">(p,q) \mapsto p+q</span> defined by</p>
+<p><span class="math display">(p+q)(x) = p(x) + q(x)</span>.</p>
+<p>Similarly, we may define s-multiplication <span class="math inline">\cdot: \mathbb{R}\times P \to P</span> whereby</p>
+<p><span class="math display"> (\lambda \cdot p)(x) = \lambda \cdot p(x) </span></p>
+<p>Now that we have defined the structure, we could decide that <span class="math inline">\square</span> is an element of our vector space <span class="math inline">(P, +, \cdot)</span>. Of course, we should formamly prove that <span class="math inline">(P, +, \cdot**</span> does satisfy the axioms of a vector space…</p>
+</section>
+</section>
+<section id="linear-maps" class="level2 page-columns page-full" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="linear-maps"><span class="header-section-number">1.2</span> Linear Maps</h2>
+<p>These are the structure-respecting maps between vector spaces:</p>
+<p><strong>Definition</strong> If <span class="math inline">(V, +_v, \cdot_v)</span> and <span class="math inline">(W, +_w, \cdot_w)</span> are vector spaces. Then a map <span class="math inline">\phi:V\to W</span> is called <em>linear</em> if:</p>
+<ol type="1">
+<li><span class="math inline">\phi(v+_v\tilde{v}) = \phi(v) +_w \phi(\tilde v)</span></li>
+<li><span class="math inline">\phi(\lambda \cdot_v v) = \lambda \cdot_w \phi(v)</span></li>
+</ol>
+<section id="example-differentiation" class="level3 page-columns page-full" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="example-differentiation"><span class="header-section-number">1.2.1</span> Example (Differentiation)</h3>
+<div class="page-columns page-full"><p>Consider <span class="math inline">\delta:P \to P</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> whereby</p><div class="no-row-height column-margin column-container"><li id="fn3" role="doc-endnote"><p><sup>3</sup>&nbsp;Notation: we write <span class="math inline">\phi: V \xrightarrow{\sim} W</span> to denote a linear map.</p></li></div></div>
+<p><span class="math display"> p\mapsto \delta(p) := p'</span></p>
+<p>defines the differentiation.</p>
+<ol type="1">
+<li><strong>Linearity:</strong> <span class="math display">\delta(p+q) = (p+q)' = p'+q' = \delta(p) + \delta(q)</span></li>
+<li><strong>Multiplication:</strong> <span class="math display">\delta(\lambda p) = (\lambda p)' = \lambda p' = \lambda \delta(p)</span></li>
+</ol>
+<p><strong>Theorem</strong> If <span class="math inline">\phi:V \xrightarrow{\sim}</span> and <span class="math inline">\psi:W \xrightarrow{\sim} W</span>, then <span class="math inline">\psi \circ \phi : V \xrightarrow{\sim} U</span></p>
+</section>
+<section id="example-1" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">1.2.2</span> Example</h3>
+<p><span class="math display">\delta \circ \delta: P \xrightarrow{\sim} P</span> is linear.</p>
+</section>
+</section>
+<section id="vector-space-of-homomorphisms" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="vector-space-of-homomorphisms"><span class="header-section-number">1.3</span> Vector Space of Homomorphisms</h2>
+<p>Fun-fact: If <span class="math inline">(V, +, \cdot)</span>, <span class="math inline">(W, +, \cdot)</span> are vector spaces, then we can define the set</p>
+<p><span class="math display">\text{Hom}(V,W) := \{ \phi: V \xrightarrow{\sim} W\}</span></p>
+<p>We can make this into a vector space by</p>
+<ol type="1">
+<li><span class="math inline">+: \text{Hom}(V,W) \times \text{Hom}(V,W) \to \text{Hom}(V,W)</span> whereby <span class="math display"> (\phi, \psi) \mapsto \phi + \psi </span> so that <span class="math display">(\phi + \psi)(v) := \phi(v) + \psi(v) </span></li>
+<li>… and the same for s-multiplication</li>
+</ol>
+<section id="example-texthompp" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="example-texthompp"><span class="header-section-number">1.3.1</span> Example <span class="math inline">\text{Hom}(P,P)</span></h3>
+<p>is a vector space. This means that <span class="math inline">\delta \in \text{Hom}(P,P)</span>, <span class="math inline">\delta \circ \delta \in \text{Hom}(P, P)</span>, and so on until <span class="math inline">\delta^{(m)} \in \text{Hom}(P,P)</span></p>
+</section>
+</section>
+<section id="dual-vector-space" class="level2 page-columns page-full" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="dual-vector-space"><span class="header-section-number">1.4</span> Dual Vector Space</h2>
+<p>This is just a heavily used special case…</p>
+<p><strong>Definition</strong>: <span class="math inline">V^* := \{\phi:V\xrightarrow{\sim} \mathbb{R}\} = \text{Hom}(V, \mathbb{R})</span> is the set of linear maps on <span class="math inline">V</span>. We say that <span class="math inline">(V^*, +, \cdot)</span> is the dual vector space to <span class="math inline">V</span>.</p>
+<p><strong>Terminology</strong>: We call <span class="math inline">\phi \in V^*</span> a <em>covector</em>.</p>
+<section id="example-2" class="level3 page-columns page-full" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="example-2"><span class="header-section-number">1.4.1</span> Example</h3>
+<div class="page-columns page-full"><p>Consider the map <span class="math inline">I:P\xrightarrow{\sim}\mathbb{R}</span>, i.e.&nbsp;<span class="math inline">I\in P^*</span> defined such that<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> <span class="math display">\begin{equation}
+    I(p) := \int_0^1 dx \; p(x)
+\end{equation}</span></p><div class="no-row-height column-margin column-container"><li id="fn4" role="doc-endnote"><p><sup>4</sup>&nbsp;This is exactly how we think of the “bras” working in quantum mechanics!</p></li></div></div>
+</section>
+</section>
+<section id="tensors" class="level2 page-columns page-full" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="tensors"><span class="header-section-number">1.5</span> Tensors</h2>
+<p><strong>Definition:</strong> Let <span class="math inline">(V, +, \cdot)</span> a vector space. Then, an <span class="math inline">(r,s)</span>-Tensor over <span class="math inline">V</span> is a multilinear map <span class="math display">\begin{equation}
+    T: V^*\times \underset{r}{...} \times V^* \times V\times \underset{s}{...} \times V \xrightarrow{\sim} \mathbb{R}
+\end{equation}</span></p>
+<section id="example-3" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="example-3"><span class="header-section-number">1.5.1</span> Example</h3>
+<p>Let <span class="math inline">T</span> be a <span class="math inline">(1,1)</span>-tensor. Then <span class="math display">\begin{align}
+    T(\phi, + \psi, v) &amp;= T(\phi, v) + T(\psi, v) \\
+    T(\lambda\phi, v) &amp;= \lambda T(\phi, v) \\
+    T(\phi, v+w) &amp;= T(\phi, v) + T(\phi, w) \\
+    T(\phi, \lambda v) &amp;= \lambda T(\phi, v)
+\end{align}</span></p>
+<p>What is <span class="math inline">T(\phi + \psi, v + w)</span>? Use linearity twice: <span class="math display">\begin{equation}
+    T(\phi + \psi, v + w) = T(\phi, v) + T(\phi, w) + T(\psi, v) + T(\psi, w)
+\end{equation}</span></p>
+</section>
+<section id="excursion" class="level3 page-columns page-full" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="excursion"><span class="header-section-number">1.5.2</span> Excursion</h3>
+<div class="page-columns page-full"><p>Let <span class="math inline">T: V^* \times V \xrightarrow{\sim} \mathbb{R}</span>, then we may define the map <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> <span class="math display">\begin{align}
+    \phi_T&amp;: V \xrightarrow{\sim} (V^*)^*\\
+    v&amp;\mapsto T(\cdot, v)
+\end{align}</span></p><div class="no-row-height column-margin column-container"><li id="fn5" role="doc-endnote"><p><sup>5</sup>&nbsp;It is a fact that for finite dimensional vector spaces <span class="math inline">V</span>, <span class="math inline">(V^*)^*=V</span>.</p></li></div></div>
+<p>Given a map <span class="math inline">\phi: V\xrightarrow{\sim} V</span>, we can construct the map <span class="math display">\begin{align}
+    T_\phi &amp;: V^*\times V \xrightarrow{\sim} \mathbb{R} \\
+    (\varphi, v) &amp;\mapsto \varphi(\phi(v))
+\end{align}</span></p>
+<p>It follows that <span class="math inline">T = T_{\phi_T}</span> and <span class="math inline">\phi = \phi_{T_\phi}</span></p>
+<p>In other words, a map from <span class="math inline">V</span> to <span class="math inline">V</span> contains the same data as a map from <span class="math inline">(V^*\times V)</span> to <span class="math inline">\mathbb{R}</span>.</p>
+</section>
+<section id="example-4" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="example-4"><span class="header-section-number">1.5.3</span> Example</h3>
+<p>Consider: <span class="math inline">g: P\times P \xrightarrow{\sim} \mathbb{R}</span> such that <span class="math display">\begin{equation}
+    (p,q) \mapsto \int_{-1}^1 dx\; p(x)q(x)
+\end{equation}</span> is a <span class="math inline">(0,2)</span>-tensor over <span class="math inline">P</span>.</p>
+<p>In other words, inner products are tensors…</p>
+</section>
+</section>
+<section id="vectors-and-covectors-as-tensors" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="vectors-and-covectors-as-tensors"><span class="header-section-number">1.6</span> Vectors and Covectors as Tensors</h2>
+<p><strong>Theorem</strong>: <span class="math display">\begin{equation}
+    \phi \in V^* \iff \phi: V\xrightarrow{\sim}\mathbb{R} \iff \phi \text{ is a } (0,1)\text{-tensor}
+\end{equation}</span></p>
+<p><strong>Theorem</strong>: <span class="math display">\begin{equation}
+    v\in V=(V^*)^* \iff v:V^* \xrightarrow{\sim} \mathbb{R} \iff v \text{ is a } (1,0)\text{-tensor}
+\end{equation}</span></p>
+<p>Okay, good! We are safe using tensors for everything.</p>
+</section>
+<section id="bases" class="level2 page-columns page-full" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="bases"><span class="header-section-number">1.7</span> Bases</h2>
+<div class="page-columns page-full"><p><strong>Definition</strong>: Let <span class="math inline">(V, +, \cdot)</span> be a vector space. A subset <span class="math inline">B \subset V</span> is called a basis<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> if <span class="math inline">\forall v\in V</span>, <span class="math inline">\exists !</span> finite <span class="math inline">F\subset B</span> such that <span class="math inline">\exists ! v^1,...,v^n \in \mathbb{R}</span> so that <span class="math display">\begin{equation}
+v = v^1f_1 + ... + v^n f_n
+\end{equation}</span></p><div class="no-row-height column-margin column-container"><li id="fn6" role="doc-endnote"><p><sup>6</sup>&nbsp;Specifically, a <em>Hamel</em> basis. <a href="https://mathworld.wolfram.com/HamelBasis.html">link</a></p></li></div></div>
+<p>Or in words: for each vector there exists a unique subset of <span class="math inline">B</span> such that there exists a unique finite collection of real numbers <span class="math inline">v^i</span> so that <span class="math inline">v=v^if_i</span>.</p>
+<p><strong>Definition</strong>: If there exists a basis <span class="math inline">B\subset V</span> with finitely many elements, say, <span class="math inline">d</span>-many, then we call <span class="math inline">d</span> the <em>dimension</em> of the vector space.</p>
+<p><strong>Remark</strong>: Let <span class="math inline">V</span> be a finite dimensional vector space. Having chosen a basis <span class="math inline">e_1, ..., e_n</span> of <span class="math inline">V</span>, we may uniquely associate <span class="math display">\begin{equation}
+    v \mapsto (v^1, ..., v^n)
+\end{equation}</span></p>
+<p>called the <em>components</em> of <span class="math inline">v</span> with respect to the chosen bases <span class="math inline">e_1,...,e_n</span>, where</p>
+<p><span class="math display">\begin{equation}
+    v = v^1e_1 + ... + v^n e_n
+\end{equation}</span></p>
+</section>
+<section id="basis-for-the-dual-space" class="level2 page-columns page-full" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="basis-for-the-dual-space"><span class="header-section-number">1.8</span> Basis for the Dual Space</h2>
+<div class="page-columns page-full"><p>Given an choice of basis <span class="math inline">e_1, ..., e_n</span> for <span class="math inline">V</span>, you can choose a basis <span class="math inline">\epsilon^1,...\epsilon^n</span> for <span class="math inline">V^*</span>. It is economical to require that once a basis <span class="math inline">e_j</span> has been chosen on <span class="math inline">V</span>, then <span class="math display">\begin{equation}
+    \epsilon^i(e_j) = \delta_j^i
+\end{equation}</span> uniquely determines the basis <span class="math inline">\epsilon^i</span> for the dual space.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn7" role="doc-endnote"><p><sup>7</sup>&nbsp;We call such a basis <strong>the dual basis</strong> of the dual space.</p></li></div></div>
+<section id="example-5" class="level3" data-number="1.8.1">
+<h3 data-number="1.8.1" class="anchored" data-anchor-id="example-5"><span class="header-section-number">1.8.1</span> Example</h3>
+<p>Consider <span class="math inline">P_3</span> with basis <span class="math inline">e_0, e_1, e_2, e_3</span> so that <span class="math display">\begin{align}
+    e_0(x) &amp;= 1 \\
+    e_1(x) &amp;= x \\
+    e_2(x) &amp;= x^2 \\
+    e_3(x) &amp;= x^3
+\end{align}</span></p>
+<p>The dual basis <span class="math inline">\epsilon^0, \epsilon^1, \epsilon^2, \epsilon^3</span> is given by <span class="math display">\begin{equation}
+    \epsilon^a := \frac{1}{a!}\partial^a\Big\vert_{x=0}
+\end{equation}</span></p>
+</section>
+</section>
+<section id="components-of-tensors" class="level2 page-columns page-full" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="components-of-tensors"><span class="header-section-number">1.9</span> Components of Tensors</h2>
+<p><strong>Definition</strong>: Let <span class="math inline">T</span> be an <span class="math inline">(r,s)</span>-tensor over a finite-dimensional vector space <span class="math inline">V</span> with basis <span class="math inline">e_1,...e_n</span>. Then define the <span class="math inline">(r+s)^{\text{dim}(V)}</span> many real numbers <span class="math display">\begin{equation}
+    T^{i_1,...,i_r}_{j_1,...,j_s} = T(\epsilon^{i_1},...\epsilon^{i_r},e_{j_1}, ..., e_{j_s})
+\end{equation}</span> where <span class="math inline">\epsilon^i</span> is the dual basis for <span class="math inline">V</span>.</p>
+<p>These numbers are called the components of the tensor with respect to the chosen basis.</p>
+<p>This is useful because knowing the components (and the basis from which they came) allows us to reconstruct the entire tensor.</p>
+<section id="example-6" class="level3 page-columns page-full" data-number="1.9.1">
+<h3 data-number="1.9.1" class="anchored" data-anchor-id="example-6"><span class="header-section-number">1.9.1</span> Example</h3>
+<p>Say <span class="math inline">T</span> is a <span class="math inline">(1,1)</span>-tensor. Then it’s components are <span class="math display">\begin{equation}
+    T^i_j := T(\epsilon^i, e_j)
+\end{equation}</span></p>
+<div class="page-columns page-full"><p>To reconstruct T from these components, we have <span class="math display">\begin{align}
+T(\phi, v) &amp;= T\left(\sum_i \phi_i\epsilon^i, \sum_j v^je_j \right) \\
+    &amp; = \sum_i\sum_j \phi_iv^j T(\epsilon^i, e_j) \\
+    &amp;= \sum_i\sum_j \phi_iv^jT^i_j
+\end{align}</span><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn8" role="doc-endnote"><p><sup>8</sup>&nbsp;Going forward, we will use the Einstein sumation convention which means <span class="math inline">T(\phi, v) = \phi_iv^jT^i_j</span>, i.e.&nbsp;any index that is repeated with one up and one down implieas a sum.</p></li></div></div>
+
+
+</section>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Lecture4.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Differentiable Manifolds</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

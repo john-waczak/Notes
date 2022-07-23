@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Schuller - 2&nbsp; Differentiable Manifolds</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./Lecture3.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Differentiable Manifolds</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Schuller</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Overview</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Multilinear Algebra</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture4.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Differentiable Manifolds</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#strategy" id="toc-strategy" class="nav-link active" data-scroll-target="#strategy"> <span class="header-section-number">2.1</span> Strategy</a></li>
+  <li><a href="#compatible-charts" id="toc-compatible-charts" class="nav-link" data-scroll-target="#compatible-charts"> <span class="header-section-number">2.2</span> Compatible Charts</a></li>
+  <li><a href="#diffeomorphisms" id="toc-diffeomorphisms" class="nav-link" data-scroll-target="#diffeomorphisms"> <span class="header-section-number">2.3</span> Diffeomorphisms</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Differentiable Manifolds</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>We are now considering differentiable manifolds. So far, we looked at topological manifolds which, roughly speaking, we would like to extend to allow us to define a velocity to each point on a curve. Is the structure <span class="math inline">(\mathcal{M}, \mathcal{O})</span> enough to talk about differentiability of curves? No! We need to make more choices (i.e.&nbsp;add more structure) before we can discuss differentiablility of a curve.</p>
+<p>We wish to define a notion of differentiable… <span class="math display">\begin{align}
+\gamma &amp;:\mathbb{R} \to \mathcal{M} \text{  (curves)  } \\
+f&amp;:\mathcal{M} \to \mathbb{R} \text{  (functions)  } \\
+\phi &amp;: \mathcal{M} \to \mathcal{N} \text{  (maps)  } \\
+\end{align}</span></p>
+<section id="strategy" class="level2 page-columns page-full" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="strategy"><span class="header-section-number">2.1</span> Strategy</h2>
+<p>Let’s consider curves <span class="math inline">\gamma: \mathbb{R} \to \mathcal{M}</span>. We don’t know what to do with this object on a manifold so what do we do? We consider the <em>portion</em> of the curve that lies in the chart domain of <span class="math inline">(U, x)</span>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-diagram1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/lecture4/diagram1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 2.1: mapping diagram</figcaption><p></p>
+</figure>
+</div>
+</div></div><p>The idea is to try to <em>lift</em> the undergraduate notion of differentiability of the curve on <span class="math inline">\mathbb{R}^d</span> (i.e.&nbsp;of <span class="math inline">x\circ\gamma</span>) to a notion of differentiability of the curve on the manifold <span class="math inline">\mathcal{M}</span> (i.e.&nbsp;of <span class="math inline">\gamma</span> itself**.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-diagram2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/lecture4/diagram2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 2.2: overlapping charts</figcaption><p></p>
+</figure>
+</div>
+</div></div><p><strong>Problem</strong>: How do we make this well defined under change of chart? In other words, in <a href="#fig-diagram2">Figure&nbsp;<span>2.2</span></a> does differentiability of <span class="math inline">x\circ\gamma</span> <em>guarantee</em> differentiability of <span class="math inline">y\circ\gamma</span>?</p>
+<p>From <a href="#fig-diagram2">Figure&nbsp;<span>2.2</span></a>, we see that <span class="math display">\begin{align}
+    y \circ \gamma &amp;= (y\circ x^{-1}) \circ (x \circ \gamma) \\
+    &amp;= y \circ (x^{-1} \circ x) \circ \gamma
+\end{align}</span></p>
+<p>We already confirmed that <span class="math inline">x\circ \gamma</span> is (undergraduate) differentiable as a function from <span class="math inline">\mathbb{R}\to\mathbb{R}^d</span>. Since we are working with topological manifolds and assuming that the chart transition maps are <em>continuous</em>, then the most we can say about <span class="math inline">y\circ x^{-1}</span> is that it is continuous. As we are composing a continuous map with a differentiable map, the answer is that <span class="math inline">y\circ \gamma</span> is <em>maybe</em> differentiable.</p>
+<p>What is the remedy for this problem?</p>
+</section>
+<section id="compatible-charts" class="level2 page-columns page-full" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="compatible-charts"><span class="header-section-number">2.2</span> Compatible Charts</h2>
+<div class="page-columns page-full"><p>In the previous section, we considered <em>any</em> imaginable charts <span class="math inline">(\mathcal{U}, x)</span> in our topological manifold <span class="math inline">(\mathcal{M}, \mathcal{O})</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> We have seen that this is not sufficient to enable differentiablility of curves, functions, and maps. Therefore, we seek to limit the set of allowed charts to <em>only those charts</em> whose transition maps are differentiable.</p><div class="no-row-height column-margin column-container"><li id="fn1" role="doc-endnote"><p><sup>1</sup>&nbsp;To emphasise this, we may say that we took these charts <span class="math inline">(\mathcal{U}, x)</span> from the <strong>maximal Atlas</strong> <span class="math inline">\mathscr{A}</span> of <span class="math inline">(\mathcal{M}, \mathcal{O})</span>.</p></li></div></div>
+<p><strong>Definition</strong>: Two charts <span class="math inline">(\mathcal{U}, x)</span> and <span class="math inline">(\mathcal{V}, y)</span> are called <span class="math inline">\ast</span>-compatible if either:</p>
+<ul>
+<li><span class="math inline">\mathcal{U}\cap\mathcal{V} = \empty</span></li>
+<li><span class="math inline">\mathcal{U}\cap\mathcal{V} \neq \empty</span> and the chart transition maps <span class="math inline">y\circ x^{-1}</span> and <span class="math inline">x \circ y^{-1}</span> are (undergraduate) <span class="math inline">\ast</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn2" role="doc-endnote"><p><sup>2</sup>&nbsp;Here we use <span class="math inline">\ast</span> as there are different types of compatibility we may care about. Here, we are specifically interested in <em>differentiably compatible</em>.</p></li></div><p><strong>Definition</strong>: An atlas <span class="math inline">\mathscr{A}_{\ast}</span> is an <span class="math inline">\ast</span>-compatible atlas if for any two charts in <span class="math inline">\mathscr{A}_{\ast}</span>, the charts are <span class="math inline">\ast</span>-compatible.</p>
+<p>For <em>physics</em> this is a really down to Earth question. <em>Am I choosing the right structure here?</em></p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\ast</span></th>
+<th>udergraduate - <span class="math inline">\ast</span></th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">C^0</span></td>
+<td><span class="math inline">C^{0}:\mathbb{R}^d\to\mathbb{R}^d</span></td>
+<td>continuous maps w.r.t. <span class="math inline">\mathcal{O}_{st}</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">C^{1}</span></td>
+<td><span class="math inline">C^1:\mathbb{R}^d \to \mathbb{R}^d</span></td>
+<td>differentiable (once) with continuous result</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">C^k</span></td>
+<td><span class="math inline">\vdots</span></td>
+<td><span class="math inline">k</span>-times continuously differentiable <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">D^k</span></td>
+<td><span class="math inline">\vdots</span></td>
+<td><span class="math inline">k</span>-times differentiable</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">C^\infty</span></td>
+<td><span class="math inline">\vdots</span></td>
+<td>infinitely differentiable, aka <em>smooth</em></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">C^\omega</span></td>
+<td><span class="math inline">\vdots</span></td>
+<td><span class="math inline">\exists</span> a multidemnsional Taylor expansion</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\mathbb{C}^\infty</span></td>
+<td><span class="math inline">\vdots</span></td>
+<td>For even dimensional manifold that are smooth <em>and</em> satisfy the generalized <em>Cauchy-Riemann</em> conditions <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></td>
+</tr>
+</tbody>
+</table>
+<div class="no-row-height column-margin column-container"><li id="fn3" role="doc-endnote"><p><sup>3</sup>&nbsp;Typically, <span class="math inline">C^k</span> is more favored than <span class="math inline">D^k</span>.</p></li><li id="fn4" role="doc-endnote"><p><sup>4</sup>&nbsp;Generally, the further down you go in this table, the more conditions you add and therebore more resitrictions you impose on your atlas <span class="math inline">\mathscr{A}</span>.</p></li></div><p>The natural <em>next</em> question is: <em>To what degree to derivatives appear in physics?</em> It turns out we don’t need to worry!</p>
+<p><strong>Theorem</strong>: (Whitney) Any <span class="math inline">C^k</span>-atlas, <span class="math inline">\mathscr{A}_{C^k}</span> with <span class="math inline">k\geq 1</span> <em>contains</em> a <span class="math inline">C^\infty</span> atlas.</p>
+<div class="page-columns page-full"><p>Upshot: If we have a <span class="math inline">C^k</span> atlas, we can always keep tossing out charts until we are left with a <span class="math inline">C^\infty</span> atlas.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5" role="doc-endnote"><p><sup>5</sup>&nbsp;Thus we may always consider smooth <span class="math inline">C^\infty</span> manifolds without loss of generality unless we wish to define Taylor Expandability, Complex Differentiability, …</p></li></div></div>
+</section>
+<section id="diffeomorphisms" class="level2 page-columns page-full" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="diffeomorphisms"><span class="header-section-number">2.3</span> Diffeomorphisms</h2>
+<p>Consider maps <span class="math inline">\Phi:\mathcal{M}\to\mathcal{N}</span></p>
+<ul>
+<li>If <span class="math inline">M,N</span> are naked sets, the <em>structure preserving</em> maps are the <strong>bijections</strong> (the invertible maps)
+<ul>
+<li>A set <span class="math inline">M</span> and <span class="math inline">N</span> are called <em>set-theoretically</em> <strong>isomorphic</strong>, <span class="math inline">M\cong N</span> if there exists a bijection <span class="math inline">\Phi</span> between them.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></li>
+</ul></li>
+<li>If we have topoologies <span class="math inline">(\mathcal{M}, \mathcal{O}_M)</span>, <span class="math inline">(\mathcal{N}, \mathcal{O}_N)</span>, the <em>structure-preserving</em> maps are the homeomorphisms (i.e.&nbsp;continuous bijections)
+<ul>
+<li>If this exists, then we call the two spaces <em>topologically</em> <strong>isomorphic</strong> (or homeomorphic)</li>
+</ul></li>
+<li>If we have vector spaces <span class="math inline">U, V</span>. Then the <em>structure-preserving</em> maps are again <strong>bijections</strong> that are both ways <strong>linear</strong></li>
+<li>Two <span class="math inline">C^\infty</span> manifolds <span class="math inline">(\mathcal{M}, \mathcal{O}_m, \mathscr{A}_m)</span> and <span class="math inline">(\mathcal{N}, \mathcal{O}_n, \mathscr{A}_n)</span> are said to be <strong>Diffeomorphic</strong> if a bijection, <span class="math inline">\Phi</span> exists and <span class="math inline">\Phi</span> and <span class="math inline">\Phi^{-1}</span> are both <span class="math inline">C^{\infty}</span> maps.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn6" role="doc-endnote"><p><sup>6</sup>&nbsp;<span class="math inline">\mathbb{N} \cong \mathbb{Z}</span>, <span class="math inline">\mathbb{N}\cong \mathbb{Q}</span>, but <span class="math inline">\mathbb{N}\not{\cong} \mathbb{R}</span>.</p></li><li id="fn7" role="doc-endnote"><p><sup>7</sup>&nbsp;As in <a href="#fig-diffablemaps">Figure&nbsp;<span>2.3</span></a></p></li><div class="">
+<div id="fig-diffablemaps" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/lecture4/diagram3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 2.3: Differentiable Maps</figcaption><p></p>
+</figure>
+</div>
+</div></div>
+<p><strong>Theorem</strong>: The number of <span class="math inline">C^\infty</span> manifolds one can make out of a give <span class="math inline">C^0</span> manifold up to diffeomorphism</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>dim <span class="math inline">\mathcal{M}</span></th>
+<th>#</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>generically (in particular for non-compact manifolds): uncountably infinitely many</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\vdots</span></td>
+<td><span class="math inline">\vdots</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">d&gt;4</span></td>
+<td>finitely-many (via <em>surgery-theory</em>)</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Lecture3.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Multilinear Algebra</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

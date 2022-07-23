@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Schuller - 3&nbsp; Tangent Spaces</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Lecture6.html" rel="next">
+<link href="./Lecture4.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tangent Spaces</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Schuller</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Overview</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Multilinear Algebra</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Differentiable Manifolds</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture5.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tangent Spaces</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Test</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#velocities" id="toc-velocities" class="nav-link active" data-scroll-target="#velocities"> <span class="header-section-number">3.1</span> Velocities</a></li>
+  <li><a href="#tangent-vector-space" id="toc-tangent-vector-space" class="nav-link" data-scroll-target="#tangent-vector-space"> <span class="header-section-number">3.2</span> Tangent Vector Space</a></li>
+  <li><a href="#components-of-a-vector-with-respect-to-a-chart" id="toc-components-of-a-vector-with-respect-to-a-chart" class="nav-link" data-scroll-target="#components-of-a-vector-with-respect-to-a-chart"> <span class="header-section-number">3.3</span> Components of a Vector with respect to a Chart</a></li>
+  <li><a href="#chart-induced-basis" id="toc-chart-induced-basis" class="nav-link" data-scroll-target="#chart-induced-basis"> <span class="header-section-number">3.4</span> Chart-Induced Basis</a></li>
+  <li><a href="#change-of-cector-components-under-a-change-of-chart" id="toc-change-of-cector-components-under-a-change-of-chart" class="nav-link" data-scroll-target="#change-of-cector-components-under-a-change-of-chart"> <span class="header-section-number">3.5</span> Change of Cector Components under a Change of Chart</a></li>
+  <li><a href="#cotangent-spaces" id="toc-cotangent-spaces" class="nav-link" data-scroll-target="#cotangent-spaces"> <span class="header-section-number">3.6</span> Cotangent Spaces</a></li>
+  <li><a href="#change-of-components-of-a-covector-with-respect-to-a-change-of-chart." id="toc-change-of-components-of-a-covector-with-respect-to-a-change-of-chart." class="nav-link" data-scroll-target="#change-of-components-of-a-covector-with-respect-to-a-change-of-chart."> <span class="header-section-number">3.7</span> Change of components of a covector with respect to a change of chart.</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tangent Spaces</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>Lead Question: <em>What is the velocity of a curve <span class="math inline">\gamma</span> at point <span class="math inline">p</span>?</em></p>
+<section id="velocities" class="level2 page-columns page-full" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="velocities"><span class="header-section-number">3.1</span> Velocities</h2>
+<div class="page-columns page-full"><p><strong>Definition</strong>: Let <span class="math inline">(\mathcal{M},\mathcal{O},\mathscr{A})</span> be a smooth manifold with a curve <span class="math inline">\gamma:\mathbb{R}\to\mathcal{M}</span> at least <span class="math inline">C^1</span>. Suppose that <span class="math inline">\gamma(\lambda_0) = p</span>. The <strong>velocity</strong> of <span class="math inline">\gamma</span> at <span class="math inline">p</span> is the linear map<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <span class="math display">\begin{align}
+   \mathscr{v}_{\gamma,p}&amp;:C^{\infty}(\mathcal{M})\xrightarrow{\sim}\mathbb{R} \\
+   f&amp;\mapsto \mathscr{v}_{\gamma, p}(f) := (f\circ \gamma)'(\lambda_0)
+\end{align}</span></p><div class="no-row-height column-margin column-container"><li id="fn1" role="doc-endnote"><p><sup>1</sup>&nbsp;Your <em>ill-definition</em> alarm bells should be ringing. In the end, there should be no dependence on the choice of chart of we’ve done something wrong.</p></li></div></div>
+<p><strong>Loose idea</strong>: The equivalence with what you’ve probably seen in the past is that previously we thought of the gradient as <span class="math inline">v^i(\partial_i f)</span> where <span class="math inline">v^i</span> is the vector we’ve dotted into the gradient <span class="math inline">\partial_i f</span>. <em>All we are doing now</em> is reinterpretting as <span class="math inline">(v^i\partial_i)f</span> where the only shift in philosophy is that we now think of the linear map <span class="math inline">v^i\partial_i</span> acting on the function <span class="math inline">f</span>. Thus, vectors in differential geometry survive as the <em>directional deriviatves</em> that they induce. However, if we know how these operators act on <em>any</em> function, we may apply them to the coordinate functions in particular to re-obtain our previous notion of the vector components.</p>
+</section>
+<section id="tangent-vector-space" class="level2 page-columns page-full" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="tangent-vector-space"><span class="header-section-number">3.2</span> Tangent Vector Space</h2>
+<p><strong>Definition</strong> For each point <span class="math inline">p\in\mathcal{M}</span>, we define the <em>set</em> <span class="math inline">T_p\mathcal{M}</span> as the “tangent space to <span class="math inline">\mathcal{M}</span> at <span class="math inline">p</span>”, i.e.&nbsp; <span class="math display">\begin{equation}
+    T_p\mathcal{M} := \left\{ \mathscr{v}_{\gamma, p} | \gamma \text{ smooth curves through } p \right\}
+\end{equation}</span></p>
+<p>Picture:</p>
+<div id="fig-intrinsic_extrinsic" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="./figures/lecture5/intrinsic_extrinsic.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 3.1: Intrinsic versus extrinsic view of tangent space</figcaption><p></p>
+</figure>
+</div>
+<p>In <a href="#fig-intrinsic_extrinsic">Figure&nbsp;<span>3.1</span></a> we see two differing realizations of the tangent space. On the left, we show the tangent space as defined above from an intrinsic standpoint. On the right we see the manifold M embedded in a <span class="math inline">d+1</span> dimensional space so that <span class="math inline">T_p\mathcal{M}</span> is a <em>literal plane</em>. While these views are technically equivalent, we choose the intrinsic view to be <em>aesthetically superior</em>.</p>
+<p><strong>Key observation:</strong> <span class="math inline">T_p\mathcal{M}</span> can be equipped with a vector space structure. Immediately, we can add two elements from <span class="math inline">T_p\mathcal{M}</span> pointwise: <span class="math display">\begin{align}
+    +&amp;:T_p\mathcal{M}\times T_p\mathcal{M} \to  \text{Hom}(C^{\infty}(\mathcal{M}), \mathbb{R})\\
+    (\mathscr{v}_{\gamma, p} + \mathscr{v}_{\delta, p})(f) &amp;:= \mathscr{v}_{\gamma, p}(f) +_{\mathbb{R}} \mathscr{v}_{\delta, p}(f)
+\end{align}</span> and likewise for s-multiplication. It remains to be shown that</p>
+<ol type="1">
+<li>there actually exists a curve <span class="math inline">\sigma</span> such that <span class="math inline">\mathscr{v}_{\gamma, p} + \mathscr{v}_{\delta, p} = \mathscr{v}_{\sigma, p}</span></li>
+<li>there actually exists a curve <span class="math inline">\tau</span> such that <span class="math inline">\alpha \mathscr{v}_{\gamma, p} = \mathscr{v}_{\tau, p}</span></li>
+</ol>
+<p>In other words, that we actually end up back in <span class="math inline">T_p\mathcal{M}</span>. Let’s start with the proof for s-multiplication:</p>
+<p>Let <span class="math inline">\tau: \mathbb{R}\to\mathcal{M}</span> be defined such that <span class="math display">\begin{equation}
+    \lambda \mapsto \tau(\lambda) := \gamma(\alpha\lambda + \lambda_0) = (\gamma \circ \mu_\alpha)(\lambda_0)
+\end{equation}</span> where <span class="math display">\begin{align}
+    \mu_\alpha&amp;: \mathbb{R} \to \mathbb{R} \\
+    r &amp;\mapsto \alpha r + \lambda_0
+\end{align}</span></p>
+<p>We see that <span class="math display">\begin{align}
+    \tau(0) &amp;= \gamma(\alpha 0 + \lambda_0) = \gamma(\lambda_0) \\
+    \mathscr{v}_{\tau, p} &amp;= (f\circ \tau)'(0) \\
+    &amp;= (f\circ \gamma \circ \mu_\alpha)'(0) \\
+    &amp;= (f\circ \gamma)'(\lambda_0)\cdot \alpha \\
+    &amp;= \alpha \mathscr{v}_{\gamma, p}
+\end{align}</span> where in the last line we used the chain rule.</p>
+<div class="page-columns page-full"><p>Next, let’s try out the sum: <span class="math display">\begin{align}
+    \mathscr{v}_{\gamma, p} + \mathscr{v}_{\delta, p} &amp;= \mathscr{v}_{\sigma, p}
+\end{align}</span> We make a choice of chart <span class="math inline">(\mathcal{U}, x)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> so that <span class="math display">\begin{align}
+    \sigma&amp;:\mathbb{R} \to \mathcal{M} \\
+    \sigma(\lambda)  &amp;:= x^{-1}\Big( (x\circ \gamma)(\lambda_0+\lambda) + (x\circ\delta)(\lambda_1 + \lambda) - (x\circ\gamma)(\lambda_0) \Big)
+\end{align}</span></p><div class="no-row-height column-margin column-container"><li id="fn2" role="doc-endnote"><p><sup>2</sup>&nbsp;Your <em>ill-definition</em> alarm bells should be ringing. In the end, there should be no dependence on the choice of chart of we’ve done something wrong.</p></li></div></div>
+<p>We claim that this does the trick. First, let’s look at <span class="math inline">\sigma(0)</span>. We have <span class="math display">\begin{align}
+    \sigma(0) &amp;= x^{-1}\Big( (x\circ\gamma)(\lambda_0) + (x\circ\delta)(\lambda_1) - (x\circ\gamma)(\lambda_0)\Big) \\
+    &amp;= x^{-1}((x\circ\delta)(\lambda_1)) \\
+    &amp;= \delta(p)
+\end{align}</span></p>
+<p>so we confirmed that we hit the correct point. Now, let’s check that the velocity is correct: <span class="math display">\begin{align}
+    \mathscr{v}_{\sigma, p}(f) &amp;= (f\circ\sigma)'(0) \\
+    &amp;= (f\circ x^{-1} \circ x \circ \sigma)'(0) \\
+    &amp;= (x^i\circ\sigma)'(0)\partial_i(f\circ x^{-1})(x(\sigma(0))) \\
+    &amp;= (x^i\circ\sigma)'(0)\partial_i(f\circ x^{-1})(x(p)) \\
+    &amp;= \Big[ (x^i\circ \gamma)'(\lambda_0)+ (x^i\circ\delta)'(\lambda_1)\Big]\partial_i(f\circ x^{-1})(x(p)) \\
+    &amp;= (x^i\circ \gamma)'(\lambda_0)\partial_i(f\circ x^{-1})(x(p)) \\
+    &amp;\qquad + (x^i\circ\delta)'(\lambda_1)\partial_i(f\circ x^{-1})(x(p))  \\
+    &amp;= (f\circ\gamma)'(\lambda_0) + (f\circ\delta)'(\lambda_1) \\
+    &amp;= \mathscr{v}_{\gamma, p}(f) + \mathscr{v}_{\delta, p}(f)
+\end{align}</span></p>
+<p>Now we can confirm that the addition and s-multiplication on <span class="math inline">T_p\mathcal{M}</span> do close thus proving that <span class="math inline">T_p\mathcal{M}</span> is, in fact, a vector space.</p>
+</section>
+<section id="components-of-a-vector-with-respect-to-a-chart" class="level2 page-columns page-full" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="components-of-a-vector-with-respect-to-a-chart"><span class="header-section-number">3.3</span> Components of a Vector with respect to a Chart</h2>
+<div class="page-columns page-full"><p><strong>Definition</strong>: Let <span class="math inline">(\mathcal{U}, x)\in \mathscr{A}</span>. Let <span class="math inline">\gamma:\mathbb{R}\to\mathcal{M}</span> be a curve with <span class="math inline">\gamma(0)=p</span>. Then <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <span class="math display">\begin{align}
+    \mathscr{v}_{\gamma, p}(f) &amp;= (f\circ \gamma)'(0) \\
+        &amp;= (f\circ x^{-1} \circ x \circ \gamma)'(0) \\
+        &amp;= (x^i\circ\gamma)'(0)\partial_i(f\circ x^{-1})(x(p))
+\end{align}</span></p><div class="no-row-height column-margin column-container"><li id="fn3" role="doc-endnote"><p><sup>3</sup>&nbsp;This formula appears frequently enough that it’s worth memorizing.</p></li></div></div>
+<p>Because the term is very cumbersome, we use the <em>notation</em> <span class="math display">\begin{equation}
+    \partial_i(f\circ x^{-1})(x(p)) =: \left[\frac{\partial f}{\partial x^i}\right]_p
+\end{equation}</span> This is <strong>not</strong> a standard partial derivative, <em>but behaves the same</em>. Note that <span class="math inline">f:\mathcal{M}\to\mathbb{R}</span> is a function of the manifold for which we don’t have a notion of the <em>partial derivative</em>.</p>
+<p>The first piece, we may rewrite as <span class="math display">\begin{equation}
+    (x^i\circ \gamma)(0) =: \dot\gamma_x^i(0)
+\end{equation}</span> so that <span class="math display">\begin{equation}
+    \mathscr{v}_{\gamma, p}(f) = \dot\gamma_x^i(0)\left( \frac{\partial}{\partial x^i}\right)_p f
+\end{equation}</span> Since this is true for all <span class="math inline">f\in C^{\infty}(\mathcal{M})</span> then in a chart we may understand this as the velocity vector <span class="math display">\begin{equation}
+    \vartheta_{\gamma, p} := \dot\gamma_x^i(0)\left(\frac{\partial}{\partial x^i}\right)_p
+\end{equation}</span></p>
+<p>where we think of <span class="math inline">\left(\dfrac{\partial}{\partial x^i}\right)_p</span> as the <em>chart-induced-basis</em> of <span class="math inline">T_p\mathcal{M}</span>.</p>
+</section>
+<section id="chart-induced-basis" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="chart-induced-basis"><span class="header-section-number">3.4</span> Chart-Induced Basis</h2>
+<p><strong>Definition</strong>: If <span class="math inline">(\mathcal{U}, x)\in\mathscr{A}</span>, then <span class="math display">\begin{equation}
+    \left(\frac{\partial}{\partial x^1} \right)_p, \left(\frac{\partial}{\partial x^2} \right)_p, ..., \left(\frac{\partial}{\partial x^d} \right)_p, \in T_p\mathcal{M}
+\end{equation}</span> constitute a basis for <span class="math inline">T_p\mathcal{U}</span>.</p>
+<p>To show linear independence, we apply the ith vector to the jth component function</p>
+<p><span class="math display">\begin{align}
+    0 = \lambda^i\frac{\partial}{\partial x^i} (x^j)
+    &amp;= \lambda^i\partial_i(x^j\circ x^{-1})(x(p)) \\
+    &amp;= \lambda^i \delta^j_i \\
+    &amp;= \lambda^j
+\end{align}</span> Thus, these really do constitute a basis.</p>
+<p>A corollary of this is that the dimension of <span class="math inline">T_p\mathcal{M}</span> is <span class="math inline">\text{dim}(\mathcal{M})</span>.</p>
+</section>
+<section id="change-of-cector-components-under-a-change-of-chart" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="change-of-cector-components-under-a-change-of-chart"><span class="header-section-number">3.5</span> Change of Cector Components under a Change of Chart</h2>
+<p><strong>NOTE</strong>: A tangent vector does not change because <em>you</em> decide to use a different chart. The components change.</p>
+<p><strong>Terminology</strong>: We will now write <span class="math inline">X\in T_p\mathcal{M}</span> instead of the more cumbersome curve notation. We also may write <span class="math display">\begin{equation}
+    X = X^i\left(\frac{\partial}{\partial x^i} \right)_p
+\end{equation}</span></p>
+<p>Let <span class="math inline">(\mathcal{U}, x)</span>, <span class="math inline">(\mathcal{V}, y)</span> be overlapping charts with <span class="math inline">p\in\mathcal{U}\cap\mathcal{V}</span>. Let <span class="math inline">X\in T_p\mathcal{M}</span>. Then <span class="math display">\begin{align}
+    X &amp;= X_{(x)}^i \left(\frac{\partial}{\partial x^i}\right)  = X_{(y)}^i\left(\frac{\partial}{\partial y^i}\right)_p\\
+\end{align}</span> consider the following: <span class="math display">\begin{align}
+    \frac{\partial}{\partial x^i}f &amp;= \partial_i(f\circ x^{-1})(x(p)) \\
+        &amp;= \partial_i \left( f \circ y^{-1} \circ y \circ x^{-1}\right)(x(p)) \\
+        &amp;= \partial_i(y^j \circ x^{-1})(x(p)) \cdot \partial_j(f\circ y^{-1})(y(p)) \\
+        &amp;= \frac{\partial y^j}{\partial x^i}\cdot \frac{\partial f}{\partial y^j} \\
+        &amp;= \left(\frac{\partial y^j}{\partial x^i}\right)\cdot \left(\frac{\partial }{\partial y^j}\right) f\\
+\end{align}</span></p>
+<p>Therefore, insertion into the previous equation yields <span class="math display">\begin{align}
+    X_{x}^i \frac{\partial y^j}{\partial x^i}\frac{\partial}{\partial y^j}  &amp;= X_{(y)}^j\frac{\partial}{\partial y^j} \\
+    X_{(y)}^j &amp;= \left(\frac{\partial y^j}{\partial x^i} \right) X_{(x)}^i
+\end{align}</span> which is exactly the transformation law for the components of a tangent vector <span class="math inline">X</span> when we switch between two charts with coordinate functions <span class="math inline">x^i</span> and <span class="math inline">y^j</span>.</p>
+</section>
+<section id="cotangent-spaces" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="cotangent-spaces"><span class="header-section-number">3.6</span> Cotangent Spaces</h2>
+<p>Given that we have <span class="math inline">T_p\mathcal{M}</span>, it is natural to consider <span class="math inline">(T_p\mathcal{M})^*</span>, i.e.&nbsp;the dual to the tangent space: <span class="math display">\begin{equation}
+    (T_p\mathcal{M})^* := \left\{\phi: T_p\mathcal{M}\xrightarrow{\sim} \mathbb{R} \right\}
+\end{equation}</span></p>
+<p><strong>Example</strong>: Consider <span class="math inline">f\in C^{\infty}(\mathcal{M})</span>. Then <span class="math display">\begin{align}
+    (df)_p &amp;:  T_p\mathcal{M} \xrightarrow{\sim} \mathbb{R} \\
+      X &amp;\mapsto (df)_p(X) := Xf
+\end{align}</span></p>
+<p>i.e.&nbsp;<span class="math inline">(df)_p\in(T_p\mathcal{M})^*</span>! This is called the gradient of <span class="math inline">f</span> at <span class="math inline">p\in\mathcal{M}</span>.</p>
+<p>Further, we can calculate the components of the gradient… <span class="math display">\begin{align}
+    \left((df)_p\right)_j &amp;:= (df)_p \left(\frac{\partial }{\partial x_j}\right)_p \\
+    &amp;= \left( \frac{\partial f}{\partial x^j} \right)_p
+\end{align}</span></p>
+<p>Upshot: The gradient of a function <em>is not a vector</em>, it’s a covector!</p>
+<p><strong>Theorem</strong>: Consider the chart <span class="math inline">(\mathcal{U}, x)</span> so that we have coordinate maps <span class="math inline">x^i:\mathcal{U}\to\mathbb{R}</span>. The claim is <span class="math display">\begin{equation}
+    (d x^1)_p, (d x^2)_p, ..., (d x^d)_p
+\end{equation}</span> is the <em>dual basis</em> for <span class="math inline">T_p^*\mathcal{M}</span>. Observe: <span class="math display">\begin{align}
+    (d x^a)_p(\frac{\partial }{\partial x^b}) = \frac{\partial x^a}{\partial x^b} = \delta_b^a
+\end{align}</span></p>
+</section>
+<section id="change-of-components-of-a-covector-with-respect-to-a-change-of-chart." class="level2 page-columns page-full" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="change-of-components-of-a-covector-with-respect-to-a-change-of-chart."><span class="header-section-number">3.7</span> Change of components of a covector with respect to a change of chart.</h2>
+<div class="page-columns page-full"><p>Let <span class="math inline">\omega \in T_p^*\mathcal{M}</span>, then <span class="math display">\begin{align}
+    \omega_{(y)j}(dy^j)_p &amp;= \omega = \omega_{(x)i} (dx^i)_p \\
+    \Rightarrow \omega_{(y)i} &amp;= \frac{\partial x^j}{\partial y^i}\omega_{(x)j}
+\end{align}</span> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn4" role="doc-endnote"><p><sup>4</sup>&nbsp;In the tutorial session, we will show that <span class="math inline">\frac{\partial x^i}{\partial y^j}</span> is the matrix inverse to <span class="math inline">\frac{\partial y^m}{\partial x^n}</span></p></li></div></div>
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Lecture4.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Differentiable Manifolds</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Lecture6.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Test</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

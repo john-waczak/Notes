@@ -1,0 +1,30 @@
+project:
+  type: book
+
+book:
+  title: "Schuller"
+  author: "John Waczak"
+  date: "7/20/2022"
+  chapters:
+    - index.qmd
+    - Lecture3.qmd
+    - Lecture4.qmd
+    - Lecture5.qmd
+    - Lecture6.qmd
+    - references.qmd
+  page-navigation: true
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    html-math-method: katex
+  pdf:
+    documentclass: scrreprt
+
+reference-location: margin
+citation-location: margin
+
+
+

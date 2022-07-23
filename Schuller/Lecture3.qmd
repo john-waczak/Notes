@@ -1,0 +1,273 @@
+# Multilinear Algebra
+
+Traditionally, this subsect is known as *Tensor Theory*.
+
+Multilinear algebra *is the same field* as the more familiar Linear Algebra- the only difference is we extend our mappings of consideration from linear maps to so called **multilinear maps**. The object of study of multilinear algebra is just **vector spaces**.
+
+A word of warning, though: we will *not* equip space(time) with a vector space structure. If spacetime does not have anything to do with vector spaces, why do we care? Because the smooth manifolds we will use to model spacetime come equipped with natural linear spaces called the **Tangent Space**, $T_pM$[^1]. It is here that our development of the multilinear algebra will really come into focus.
+
+[^1]: Smooth manifolds will be defined in Lecture 4. The concept of the Tangent Space $T_pM$ will be explored in Lecture 5.
+
+It is beneficial to first study Vector Spaces in full (abstract) detail before moving on for two reasons: 
+
+1. To construct $T_pM$, one needs an intermediate vector space called $C^{\infty}(M**$.
+2. Tensor techniques are most easily understood in the abstract context.
+
+
+## Vector Spaces
+
+**Definition:** An $\mathbb{R}$ Vector Space $(V, +, *)$ is 
+
+1. A set $V$ 
+2. $+:V\times V\to V$ (vector addition)
+3. $*:\mathbb{R}\times V \to V$ (scalar multiplication)
+
+which satisfies the following rules:
+
+- (C) $v + w = w + v$ for $v,w \in V$ 
+- (A) $(u + v) + w = u + (v + w)$ for $u,v,w \in V$
+- (N) $\exists 0\in V$ such that $\forall v \in V$: $v + 0 = v$
+- (I) $\forall v \in V$, $\exists (-v)  \in V$: $v + (-v) = 0$
+
+- (A) $\lambda \cdot (\nu \cdot v) = (\lambda \cdot \nu) \cdot v$ $\forall \lambda, \nu \in \mathbb{R}$ and $\forall v \in V$.
+- (D) $(\lambda + \nu)v = \lambda v + \nu v$ 
+- (D) $\lambda \nu + \lambda w = \lambda(v+w)$
+- (U) $1\cdot v = v$
+
+Summary: Any structure of this type that satisfies these axioms is a vector space. 
+
+Terminology: An element of a vector space is often referred to (informally) as a *vector*.[^2]. 
+
+[^2]: You must not ask the question: *What is a vector?*. You couldn't tell that an object is a vector just by looking at it. You need to check how it behaves with other *similar* objects.
+
+
+### Example 
+
+Consider the set of polynomials $P_n := \{p=\sum_{i=0}^{n}p_ix^i\}$ with $p_i\in \mathbb{R}$ and $p:(-1,1)\to\mathbb{R}$. At this stage, we may ask the *simple* question: is $\square:x\mapsto x^2$ a vector? **NO!** $\square$ is an element of the set $P$. We have not defined a vector space for which addition and s-multiplication make sense.
+
+Now, we define $+:P\times P \to P$ whereby $(p,q) \mapsto p+q$ defined by 
+$$(p+q)(x) = p(x) + q(x)$$.
+
+Similarly, we may define s-multiplication $\cdot: \mathbb{R}\times P \to P$ whereby 
+$$ (\lambda \cdot p)(x) = \lambda \cdot p(x) $$
+
+
+Now that we have defined the structure, we could decide that $\square$ is an element of our vector space $(P, +, \cdot)$. Of course, we should formamly prove that $(P, +, \cdot**$ does satisfy the axioms of a vector space...
+
+
+
+## Linear Maps
+
+These are the structure-respecting maps between vector spaces: 
+
+**Definition** If $(V, +_v, \cdot_v)$ and $(W, +_w, \cdot_w)$ are vector spaces. Then a map $\phi:V\to W$ is called *linear* if: 
+
+1. $\phi(v+_v\tilde{v}) = \phi(v) +_w \phi(\tilde v)$
+2. $\phi(\lambda \cdot_v v) = \lambda \cdot_w \phi(v)$
+
+
+### Example (Differentiation)
+Consider $\delta:P \to P$[^3] whereby 
+$$ p\mapsto \delta(p) := p'$$
+defines the differentiation. 
+
+1. **Linearity:** $$\delta(p+q) = (p+q)' = p'+q' = \delta(p) + \delta(q)$$
+2. **Multiplication:** $$\delta(\lambda p) = (\lambda p)' = \lambda p' = \lambda \delta(p)$$
+
+[^3]: Notation: we write $\phi: V \xrightarrow{\sim} W$ to denote a linear map.
+
+
+**Theorem** If $\phi:V \xrightarrow{\sim}$ and $\psi:W \xrightarrow{\sim} W$, then $\psi \circ \phi : V \xrightarrow{\sim} U$
+
+
+### Example 
+
+$$\delta \circ \delta: P \xrightarrow{\sim} P$$ is linear.
+
+
+## Vector Space of Homomorphisms
+
+Fun-fact: If $(V, +, \cdot)$, $(W, +, \cdot)$ are vector spaces, then we can define the set 
+$$\text{Hom}(V,W) := \{ \phi: V \xrightarrow{\sim} W\}$$
+
+We can make this into a vector space by 
+
+1. $+: \text{Hom}(V,W) \times \text{Hom}(V,W) \to \text{Hom}(V,W)$ whereby $$ (\phi, \psi) \mapsto \phi + \psi $$ so that $$(\phi + \psi)(v) := \phi(v) + \psi(v) $$
+2. ... and the same for s-multiplication
+
+### Example $\text{Hom}(P,P)$
+is a vector space. This means that $\delta \in \text{Hom}(P,P)$, $\delta \circ \delta \in \text{Hom}(P, P)$, and so on until $\delta^{(m)} \in \text{Hom}(P,P)$
+
+
+## Dual Vector Space 
+This is just a heavily used special case... 
+
+**Definition**: $V^* := \{\phi:V\xrightarrow{\sim} \mathbb{R}\} = \text{Hom}(V, \mathbb{R})$ is the set of linear maps on $V$. We say that $(V^*, +, \cdot)$ is the dual vector space to $V$.
+
+**Terminology**: We call $\phi \in V^*$ a *covector*.
+
+### Example 
+Consider the map $I:P\xrightarrow{\sim}\mathbb{R}$, i.e. $I\in P^*$ defined such that[^4]
+\begin{equation}
+    I(p) := \int_0^1 dx \; p(x)
+\end{equation}
+
+[^4]: This is exactly how we think of the "bras" working in quantum mechanics!
+
+
+
+
+## Tensors
+
+**Definition:** Let $(V, +, \cdot)$ a vector space. Then, an $(r,s)$-Tensor over $V$ is a multilinear map 
+\begin{equation}
+    T: V^*\times \underset{r}{...} \times V^* \times V\times \underset{s}{...} \times V \xrightarrow{\sim} \mathbb{R}
+\end{equation}
+
+
+### Example 
+
+Let $T$ be a $(1,1)$-tensor. Then 
+\begin{align}
+    T(\phi, + \psi, v) &= T(\phi, v) + T(\psi, v) \\ 
+    T(\lambda\phi, v) &= \lambda T(\phi, v) \\ 
+    T(\phi, v+w) &= T(\phi, v) + T(\phi, w) \\ 
+    T(\phi, \lambda v) &= \lambda T(\phi, v)
+\end{align}
+
+What is $T(\phi + \psi, v + w)$? Use linearity twice: 
+\begin{equation}
+    T(\phi + \psi, v + w) = T(\phi, v) + T(\phi, w) + T(\psi, v) + T(\psi, w)
+\end{equation}
+
+
+### Excursion 
+
+Let $T: V^* \times V \xrightarrow{\sim} \mathbb{R}$, then we may define the map [^5]
+\begin{align}
+    \phi_T&: V \xrightarrow{\sim} (V^*)^*\\
+    v&\mapsto T(\cdot, v)
+\end{align}
+
+[^5]: It is a fact that for finite dimensional vector spaces $V$,  $(V^*)^*=V$.
+
+Given a map $\phi: V\xrightarrow{\sim} V$, we can construct the map 
+\begin{align}
+    T_\phi &: V^*\times V \xrightarrow{\sim} \mathbb{R} \\ 
+    (\varphi, v) &\mapsto \varphi(\phi(v))
+\end{align}
+
+It follows that $T = T_{\phi_T}$ and $\phi = \phi_{T_\phi}$
+
+In other words, a map from $V$ to $V$ contains the same data as a map from $(V^*\times V)$ to $\mathbb{R}$.
+
+
+### Example
+
+Consider: $g: P\times P \xrightarrow{\sim} \mathbb{R}$ such that 
+\begin{equation}
+    (p,q) \mapsto \int_{-1}^1 dx\; p(x)q(x)
+\end{equation}
+is a $(0,2)$-tensor over $P$. 
+
+In other words, inner products are tensors...
+
+
+## Vectors and Covectors as Tensors 
+
+**Theorem**: 
+\begin{equation}
+    \phi \in V^* \iff \phi: V\xrightarrow{\sim}\mathbb{R} \iff \phi \text{ is a } (0,1)\text{-tensor}
+\end{equation}
+
+**Theorem**: 
+\begin{equation}
+    v\in V=(V^*)^* \iff v:V^* \xrightarrow{\sim} \mathbb{R} \iff v \text{ is a } (1,0)\text{-tensor}
+\end{equation}
+
+Okay, good! We are safe using tensors for everything.
+
+
+## Bases 
+
+**Definition**: Let $(V, +, \cdot)$ be a vector space. A subset $B \subset V$ is called a basis[^6] if $\forall v\in V$, $\exists !$ finite $F\subset B$  such that $\exists ! v^1,...,v^n \in \mathbb{R}$ so that 
+\begin{equation}
+ v = v^1f_1 + ... + v^n f_n
+\end{equation}
+
+[^6]: Specifically, a *Hamel* basis. [link](https://mathworld.wolfram.com/HamelBasis.html)
+
+Or in words: for each vector there exists a unique subset of $B$ such that there exists a unique finite collection of real numbers $v^i$ so that $v=v^if_i$.
+
+
+**Definition**: If there exists a basis $B\subset V$ with finitely many elements, say, $d$-many, then we call $d$ the *dimension* of the vector space.
+
+
+**Remark**: Let $V$ be a finite dimensional vector space. Having chosen a basis $e_1, ..., e_n$ of $V$, we may uniquely associate 
+\begin{equation}
+    v \mapsto (v^1, ..., v^n)
+\end{equation}
+
+called the *components* of $v$ with respect to the chosen bases $e_1,...,e_n$, where 
+
+\begin{equation}
+    v = v^1e_1 + ... + v^n e_n
+\end{equation}
+
+
+
+## Basis for the Dual Space 
+
+Given an choice of basis $e_1, ..., e_n$ for $V$, you can choose a basis $\epsilon^1,...\epsilon^n$ for $V^*$. It is economical to require that once a basis $e_j$ has been chosen on $V$, then 
+\begin{equation}
+    \epsilon^i(e_j) = \delta_j^i
+\end{equation}
+uniquely determines the basis $\epsilon^i$ for the dual space.[^7]
+
+[^7]: We call such a basis **the dual basis** of the dual space.
+
+
+### Example 
+Consider $P_3$ with basis $e_0, e_1, e_2, e_3$ so that 
+\begin{align}
+    e_0(x) &= 1 \\ 
+    e_1(x) &= x \\ 
+    e_2(x) &= x^2 \\ 
+    e_3(x) &= x^3
+\end{align}
+
+The dual basis $\epsilon^0, \epsilon^1, \epsilon^2, \epsilon^3$ is given by 
+\begin{equation}
+    \epsilon^a := \frac{1}{a!}\partial^a\Big\vert_{x=0}
+\end{equation}
+
+
+
+## Components of Tensors
+
+**Definition**: Let $T$ be an $(r,s)$-tensor over a finite-dimensional vector space $V$ with basis $e_1,...e_n$. Then define the $(r+s)^{\text{dim}(V)}$ many real numbers
+\begin{equation}
+    T^{i_1,...,i_r}_{j_1,...,j_s} = T(\epsilon^{i_1},...\epsilon^{i_r},e_{j_1}, ..., e_{j_s})
+\end{equation}
+where $\epsilon^i$ is the dual basis for $V$.
+
+These numbers are called the components of the tensor with respect to the chosen basis.
+
+
+This is useful because knowing the components (and the basis from which they came) allows us to reconstruct the entire tensor. 
+
+### Example 
+Say $T$ is a $(1,1)$-tensor. Then it's components are
+\begin{equation}
+    T^i_j := T(\epsilon^i, e_j)
+\end{equation}
+
+To reconstruct T from these components, we have 
+\begin{align}
+T(\phi, v) &= T\left(\sum_i \phi_i\epsilon^i, \sum_j v^je_j \right) \\
+    & = \sum_i\sum_j \phi_iv^j T(\epsilon^i, e_j) \\ 
+    &= \sum_i\sum_j \phi_iv^jT^i_j
+\end{align}[^8]
+
+[^8]: Going forward, we will use the Einstein sumation convention which means $T(\phi, v) = \phi_iv^jT^i_j$, i.e. any index that is repeated with one up and one down implieas a sum.
+
