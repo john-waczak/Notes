@@ -1,0 +1,133 @@
+# Parallel Transport & Curvature
+
+Experiment: 
+
+![Visualization of parallel transport on the sphere: The initial green vector no longer aligns with iteself after being trnasported around the closed curve to the coral vector.](/figures/lecture8/parallel_transport.png){#fig-parallel_transport}
+
+In standard flat space, if we transport a vetor along some closed curve, we find that it does not change. This is not the case on the curved sphere as we see in @fig-parallel_transport. This motivates our exploration of the notion of curvature. Does the covariant derivative of vectors on manifolds contain this information? 
+
+
+## Parallelity of Vector Fields
+
+For this lecture, assume we have a manifold with connection, $(\mathcal{M},\mathcal{O},\mathscr{A},\nabla)$. 
+
+**Definition** (1): A vector field $X\in\Gamma(T\mathcal{M})$ is said to be *parallely transported* along a smooth curve $\gamma:\mathbb{R}\to\mathcal{M}$ if 
+\begin{equation}
+    \nabla_{\mathscr{v}_\gamma}X = 0
+\end{equation}
+In words: Along the curve $\gamma$, the covariant derivative of the field $X$ with respect to the tangent vector $\mathscr{v}_\gamma$ is $0$.
+
+**Definition** (2): A slightly weaker condition than parallely-transported is *parallel*. A vector field $X$ is said to be parallel along a curve $\gamma$, if 
+\begin{equation}
+    \nabla_{\mathscr{v}_\gamma}X = \mu \cdot X
+\end{equation}
+for $\mu:\mathbb{R}\to\mathbb{R}$.
+
+Example: *Euclidean Plane* $(\mathcal{R}^2, \mathcal{O}_{st}, \mathscr{A}, \nabla_E)$
+
+![Left: Parallely transported vector field X. Right: Parallel vector field X](/figures/lecture8/parallelity.png){#fig-parallelity}
+
+
+## Autoparallely Transproted Curves 
+
+**Definition**: A curve $\gamma:\mathbb{R}\to\mathcal{M}$ is called *autoparallely-transported* [^1] if 
+\begin{equation}
+    \nabla_{\mathscr{v}_\gamma} \mathscr{v}_\gamma = 0 
+\end{equation}
+
+
+*Examples*: Euclidean Plane $(\mathbb{R}^2)$
+
+![Left: Autoparallely transported curve. Right: Autoparallel curve.](/figures/lecture8/autoparallel.png){#fig-autoparallel}
+
+[^1]: In physics, this would be called **uniform motion** and is the subject of Newton's Laws.
+
+
+### Autoparallel Equation
+To understand the previous equation, we must understand how to apply the covariante derivative to curves $\gamma:\mathbb{R}\to\mathbb{M}$. We do so in the following sense: 
+
+Consider a vector field $X\in\Gamma(T\mathcal{M})$ and a curve $\gamma:\mathbb{R}\to\mathcal{M}$ such that for each $p\in\mathcal{M}$, we have $\mathscr{v}_{\gamma(p)} = X_{\gamma(p)}$. By definition of the covariant derivative, we have: 
+\begin{align}
+\nabla_X X &= \nabla_X \left( X^i \partial_i \right) \\ 
+&= \left(\nabla_X X^i\right)\partial_i + X^iX^j\Gamma^k_{ji}\partial_k \\
+\end{align}
+we now restrict this relation to the curve so that $X_{\gamma}=\mathscr{v}_{\gamma}$, $X^i = \dot{\gamma}^i$, and 
+\begin{align}
+    \nabla_{X_{\gamma}} X^i &= X_{\gamma}(X^i) \\ 
+    &= \frac{d}{dt}(X^i \circ \gamma) \\ 
+    &= \frac{d}{dt}(X(x^i)\circ \gamma) \\ 
+    &= \frac{d}{dt}X_{\gamma}(x^i) \\ 
+    &= \frac{d}{dt}\frac{d}{dt}(x^i \circ \gamma) \\ 
+    &= \ddot{\gamma}^i
+\end{align}
+As a consequence, we find that 
+\begin{equation}
+    \nabla_{\mathscr{v}_\gamma}\mathscr{v}_\gamma = \ddot{\gamma}^k\partial_k + \dot{\gamma}^i\dot{\gamma}^j\Gamma^k_{ji}\partial_k
+\end{equation}
+so that the autoparallel equation in a chart becomes 
+\begin{equation}
+\boxed{0 = \ddot{\gamma}^k + \dot{\gamma}^i\dot{\gamma}^j\Gamma^k_{ji}}
+\end{equation}
+
+
+## Torsion 
+
+**Question:**  Can one use $\nabla$ to define a tensor(s) on $(\mathcal{M},\mathcal{O},\mathscr{A},\nabla)$? 
+
+**Definition**: The *torsion* of a connection $\nabla$ is the $(1,2)$-tensor field 
+\begin{equation}
+    T(\omega, X, Y) := \omega\left(\nabla_X Y - \nabla_Y X - [X, Y]\right)
+\end{equation}
+where $[X, Y]$ is the *commutator*[^1] defined as follows: 
+\begin{equation}
+    [X, Y](f) := X(Yf) - Y(Xf)
+\end{equation}
+
+[^1]: This is exactly the commutator you get from Lie Theory... 
+
+To prove this, we must check that $T$ is $C^{\infty}$ linear in each slot. 
+\begin{align}
+    T(f\cdot\omega, X, Y) &= f\cdot\omega \left( \cdots \right) = fT(\omega, X, Y) \\ 
+    T(\omega + \psi, X, Y) &= \cdots = T(\omega, X, Y) + T(\psi, X, Y) \\ 
+    T(\omega, fX, Y) &= \omega\left(\nabla_{fX}Y - \nabla_Y(fX) - [fX, Y] \right) \\ 
+    &= \omega\Big( f\nabla_X Y - (Yf)X - f\nabla_YX \\ 
+    &\qquad\qquad- f[X,Y] + (Yf)X \Big)\\ 
+    &= fT(\omega, X, Y) \\ 
+\end{align}
+where 
+\begin{align}
+    [fX, Y]g &= fX(Yg) - Y(fXg) \\
+    &= fX(Yg)-(Yf)(Xg) - fY(Xg)\\
+    &= f[X,Y]g - (Yf)Xg
+\end{align}
+
+We have left out the linearity check in the $X$ slot. *NOTE* that since $T(\omega, Y, X)= -T(\omega, X,Y)$ by definition, we do not need to check the last slot. 
+
+
+**Definition**: A manifold with connection $(\mathcal{M},\mathcal{O},\mathscr{A},\nabla)$ is called *torsion-free* if $T=0$ everywhere. In a chart, that is 
+\begin{equation}
+    T^i_{ab} := T(dx^i, \partial_a, \partial_b) = \cdots = \Gamma^i_{ab} - \Gamma^i_{ba}
+\end{equation}
+
+Going forward, we will only use torsion-free connections.
+
+
+## Curvature 
+
+**Definition**: The *Riemann Curvature* of a connection $\nabla$ is the $(1,3)$-tensor field
+\begin{equation}
+    \text{Riem}(\omega, Z, X, Y) := \omega \Big( \nabla_X\nabla_Y Z - \nabla_Y\nabla_X Z - \nabla_{[X,Y]}Z \Big)
+\end{equation}
+and can be shown to be $C^{\infty}$-linear in each slot. 
+
+### Algebraic relevance of $\text{Riem}$
+
+\begin{align}
+    \nabla_X\nabla_YZ - \nabla_Y\nabla_X Z = \text{Riem}(\cdot, Z, X, Y) + \nabla_{[X, Y]}Z
+\end{align}
+so the Riemann tensor tells us how parallel transport fails to commute. In a chart, we find 
+\begin{align}
+    \left(\nabla_a \nabla_b Z - \nabla_b\nabla_a Z\right)^m = \text{Riem}^m_{nab}Z^n + \nabla_{\cancel{[\partial_a,\partial_b ]}}Z
+\end{align}
+in other words, in a chart, the Riemann tensor contains all of the information about the failure of parallel transport to commute. 
+

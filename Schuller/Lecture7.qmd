@@ -1,0 +1,119 @@
+# Connections
+
+Everything from now own will be mathematical objects that are subjects in Einstein's equations. 
+
+**So far:**  We saw that a vector field $X\in\Gamma(T\mathcal{M})$ can be used to provide a directional derivative $\nabla_X f := Xf$[^1] of a function $f\in C^{\infty}(\mathcal{M})$.
+
+[^1]: Notational overkill? So far, we have $Xf$, $(df)(X)$, and now $\nabla_X f$ which are all equivalent. The reason for this is that they are not *quite* the same since
+\begin{aligned}
+    X:&\; C^{\infty}(\mathcal{M}) \to C^{\infty}(\mathcal{M}) \\ 
+    df:&\; \Gamma(T\mathcal{M}) \to C^{\infty}(\mathcal{M}) \\ 
+    \nabla_X:&\; C^{\infty}(\mathcal{M}) \to C^{\infty}(\mathcal{M}) \\ 
+\end{aligned}
+but $\nabla_X$  can actually by extended so that $\nabla_X:(p,q)-\text{Tensor Field} \to (p,q)-\text{Tensor Field}$
+
+
+*Remark*: From now on we consider (mostly) vector fields.
+
+Our goal is to extend the notion of derivative from functions to vector fields and later tensor fields. We invent a new symbol because this extension **does not come automatically**: we must add additional structure.
+
+
+## Directional Derivatives of Tensor Fields
+
+We begin by formulating a *wish-list* of properties that our $\nabla_X$ acting on a tensor field should have. After making the wish-list, any remaining freedom in choosing $\nabla$ will need to be provided as additional structure beyond $(\mathcal{M}, \mathcal{O}, \mathscr{A})$ 
+
+**Definition**: A connection $\nabla$[^2] on a smooth manifold $(\mathcal{M}, \mathcal{O}, \mathscr{A})$ is a map that takes a pair consisting of a vector (field) $X$ and a (p,q)-tensor *field*  $T$ and sends them to a (p,q)-tensor field $\nabla_X T$ such that 
+
+[^2]: More precisely, linear connection, covariant derivative, or affine connection.
+
+1. $\nabla_X f = Xf$  (action on function) 
+2. $\nabla_X(T+S) = \nabla_X T + \nabla_X S$  (additivity)
+3. $\nabla_X(T(\omega, Y)) = (\nabla_X T)(\omega, Y) + T(\nabla_X\omega, Y) + T(\omega, \nabla_X Y)$  (Liebnitz Rule)
+4. $\nabla_{fX + Z} T = f\nabla_{X}T + \nabla_Z T$     ($C^{\infty}$-linearity)
+
+Any such structure is called a *covariant derivative* and we say a **manifold with connection** is a quadruple of structures $(\mathcal{M}, \mathcal{O}, \mathscr{A}, \nabla)$. 
+
+The question remains: is there a unique $\nabla$ or are there many ways to satisfy these rules? It turns our to be the later case as we will see next.
+
+**Remark**: $\nabla_X$ is the extension of $X$. $\nabla$ alone is the extension of $d$. 
+
+
+## 2. New structure on $(\mathcal{M}, \mathcal{O}, \mathscr{A})$ required to fix $\nabla$. 
+
+Consider $X, Y\in\Gamma(T\mathcal{M})$ vector fields. Consider locally in a chart $(\mathcal{U}, x)$:
+\begin{align}
+    \nabla_X Y &:= \nabla_{X^i\partial_i}Y^m\partial_m \\  
+    &= X^i\left(\nabla_{\partial_i}Y^m\right)\partial_m + X^iY^m\left(\nabla_{\partial_i}\partial_m\right) \\ 
+    &= X^i\left(\partial_iY^m \right)\partial_m + X^iY^m \Gamma^q_{m i} \partial_q
+\end{align}
+where in the last line we have expanded the unkown vector field in the chart basis. We call $\Gamma^q_{m i}$ the **connection coefficient functions** (on $\mathcal{M}$) of $\nabla$ with respect to the chart $(\mathcal{U}, x)$.[^3]
+
+[^3]: We could have also defined the Liebnitz rule as $\nabla_X(T\otimes S)=\nabla_XT\otimes S + T\otimes \nabla_X S$ where $\otimes$ denotes the so called **tensor product** which can be thought of as the *elemnt-wise* multiplication, i.e. $(T\otimes S)(\omega,...,X,...) := T(\omega,...,X,...)\cdot S(..., ...)$ where the first p,q slots are evaluated in $T$ and the rest of the r,s slots are evaluated in $S$.
+
+
+**Definition**: Given $(\mathcal{M}, \mathcal{O}, \mathscr{A}, \nabla)$ and a chart $(\mathcal{U}, x)$, the *connection coefficient functions* with respect to the chart are the $\text{dim}M^3$ many functions $\Gamma^i_{jk}:\mathcal{U}\to\mathbb{R}$ such that 
+\begin{equation}
+    p \mapsto \left(dx^i\left(\nabla_{\partial_k}\partial_j \right)\right)(p)
+\end{equation}
+
+
+Thus, 
+\begin{equation}
+    \left(\nabla_X Y\right)^i = X^m\left(\partial_mY^i\right) + \Gamma^i_{m n}Y^n X^m
+\end{equation}
+
+This is a very simple way to express *what this thing does*. If we provided you with these functions on a chart, you are able to calculate the directional derivative of $Y$ with respect to $X$. This is *a lot* of information we need to provide! Further, do we need more coefficients than these as we increase the rank of the tensor we are differentiating? It turns out, **no**. The only difference ends up being the sign in front. 
+
+*Remark*: On a chart domain $\mathcal{U}$, the choice of the $(\text{dim}\mathcal{M})^3$ functions $\Gamma^i_{jk}$ suffices to fix the action of $\nabla$ on a vector field. Fortunately, the same $\Gamma^i_{jk}$ also fix the action of nabla on any covecter (and by extension tensor) field.
+
+Key observation: 
+\begin{align}
+   \nabla_{\partial_m} \left( dx^i \right) &=  \Sigma^i_{jm} dx^j
+\end{align}
+but now: 
+\begin{align}
+    \nabla_{\partial_m}\left( dx^i(\partial_j) \right) &= \partial_m(\delta^i_j) = 0 \\ 
+    &= \left( \nabla_{\partial_m} dx^i \right)\left( \partial_j \right) + dx^i\left(\nabla_{\partial_m}\partial_j \right)\\
+    &= \left( \nabla_{\partial_m} dx^i \right)\left( \partial_j \right) + dx^i\left(\Gamma^q_{jm} \partial_q \right)\\
+\end{align}
+so that by reading off, we obtain
+\begin{align}
+    \left(\nabla_{\partial_m}dx^i \right)_j &= -\Gamma^i_{j m} 
+\end{align}
+showing that $\Sigma^i_{jm} = -\Gamma^{i}_{jm}$. The only difference between covector components is a minus sign! [^4]
+
+[^4]: We now have the following pneumonic (worth memorizing): 
+\begin{aligned}
+    (\nabla_X Y)^i &= X(Y^i) + \Gamma^i_{jk}Y^jX^k \\ 
+    (\nabla_X\omega)_i &= X(\omega_i) - \Gamma^j_{im}\omega_jX^m
+\end{aligned}
+
+
+By extension, we obtain the action of $\nabla$ on a $(1,2)$-tensor field (for example): 
+\begin{equation}
+    (\nabla_X T)^i_{jk} = X(T^i_{jk}) + \Gamma^i_{s m}T^s_{jk}X^m - \Gamma^s_{j m}T^i_{sk}X^m - \Gamma^s_{km}T^i_{js}X^m
+\end{equation}
+
+
+**Definition**: Given $X\in\Gamma(T\mathcal{M})$ of $(\mathcal{M}, \mathcal{O},\mathscr{A},\nabla)$, then the divergence of $X$ is the function[^5] 
+\begin{equation}
+    \text{div}(X) := \left( \nabla_{\partial_i} X\right)^i
+\end{equation}
+
+[^5]: *claim*: $\text{div}(X)$ is chart-independent
+
+The remaining question is are the $\Gamma^i_{jk}$ chart compatible?
+
+
+## Change of Components of $\Gamma^i_{jk}$ Under Change of Chart
+Let $(\mathcal{U}, x)$ and $(\mathcal{V},x')$ charts with $\mathcal{U}\cap\mathcal{V}\neq \emptyset$. Let $'$-ed indices denote the $y$ coordinates and unpripmed denote the $x$ coordinates. Then,
+
+\begin{align}
+    \Gamma^{i'}_{j'k'} &:= dx^{i'}\left(\nabla_{\partial_{k'}}\partial_{j'} \right) \\ 
+    &= \frac{\partial x^{i'}}{\partial x^{q}}dx^q \left( \nabla_{\frac{\partial x^p}{\partial x^{k'}}\frac{\partial}{\partial x^p}} \frac{\partial x^s}{\partial x^{j'}}\frac{\partial}{\partial x^{s}}  \right) \\ 
+    &= \frac{\partial x^{i'}}{\partial x^q}dx^q \left( \frac{\partial x^p}{\partial x^{k'}}\left[ \left(\nabla_{\partial_p}\frac{\partial x^s}{\partial x^{j'}} \right)\partial_s + \frac{\partial x^s}{\partial x^{j'}}\left(\nabla_{\partial p} \partial_s \right) \right]   \right)\\
+    &= \frac{\partial x^{i'}}{\partial x^q}\frac{\partial x^p}{\partial x^{k'}}\partial_p\left(\frac{\partial x^s}{\partial x^{j'}}\right)\delta^q_s + \frac{\partial x^{i'}}{\partial x^q}\frac{\partial x^p}{\partial x^{k'}}\frac{\partial x^s}{\partial x^{j'}}\Gamma^q_{sp} \\ 
+    &= \frac{\partial x^{i'}}{\partial x^q}\frac{\partial x^p}{\partial x^{k'}}\frac{\partial x^s}{\partial x^{j'}}\Gamma^q_{sp} + \frac{\partial x^{i'}}{\partial x^q}\frac{\partial^2 x^q}{\partial x^{k'}\partial x^{j'}}\\ 
+\end{align}
+The presence of the second term makes it clear that the $\Gamma$ are not components of a tensor field. 
+
