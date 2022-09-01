@@ -11,6 +11,8 @@ book:
     - Lecture4.qmd
     - Lecture5.qmd
     - Lecture6.qmd
+    - Lecture7.qmd
+    - Lecture8.qmd
     - references.qmd
   page-navigation: true
 
